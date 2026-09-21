@@ -181,70 +181,31 @@ section.view.on{display:block}
 <script>
 const CHECK = [
  {phase:"Prima di partire", day:"Oggi, lunedì 21", items:[
-  ["minipig","Pagare il MiniPig","minipig.cafe · VIP Heaven · mar 29 ore 15:40 · 18.245 Ft. Salvare la conferma.","r"],
-  ["fondi","Fondi sulla carta per il Collect","Booking addebita 386,34 € stanotte, non al check-in.","r"],
-  ["farnesina","Registrare il viaggio su Dove siamo nel mondo","dovesiamonelmondo.it · Polonia 23-27, Ungheria 27-30 · Michelle come accompagnatrice se il modulo lo consente."],
-  ["nome","Controllare il nome di Michelle sui voli","Ryanair mostra «MICHELLE FRANCIA»: deve coincidere col passaporto. La correzione dall'app oggi costa poco.","w"],
-  ["stampa","Stampare 5 fogli","Czartoryski · Auschwitz 13:00 · Auschwitz 17:20 · bus Lajkonik andata e ritorno. In una busta nel trolley."],
-  ["pdf","Copiare la cartella documenti sul telefono","Disponibile offline: in miniera e ad Auschwitz la rete va e viene."],
-  ["jerzy","Messaggio a Jerzy su Airbnb","Istruzioni del lockbox e chiavi di domenica."],
-  ["collect","Messaggio al Collect su Booking","Come funziona il taxi dall'aeroporto: dove aspetta, cartello, numero."]
+  ["minipig","Pagare il MiniPig","minipig.cafe · VIP Heaven · 18.245 Ft","r"],
+  ["fondi","Fondi sulla carta per il Collect","Booking addebita 386 € stanotte","r"],
+  ["nome","Nome di Michelle sui voli uguale al passaporto","Ryanair mostra «MICHELLE FRANCIA»","w"],
+  ["farnesina","Registrarsi su Dove siamo nel mondo","dovesiamonelmondo.it"],
+  ["stampa","Stampare Czartoryski, Auschwitz ×2, bus ×2",""],
+  ["pdf","Biglietti copiati sul telefono",""]
  ]},
  {day:"Martedì 22", items:[
-  ["checkin1","Check-in Ryanair NAP → KRK dalle 6:20","Dall'app, entrambi. Carte d'imbarco solo digitali.","r"],
-  ["carta","Carta abilitata all'estero, notifiche attive","Plafond giornaliero sufficiente."],
-  ["app","App pronte con accesso fatto","Ryanair, Koleo, Jakdojade, Bolt, Airbnb, Booking, GetYourGuide, Radical Storage · Wallet con la crociera · mappe offline di Cracovia e Oświęcim."],
-  ["batterie","Powerbank carico","Il telefono è carta d'imbarco e biglietti. Batterie delle camere in cabina, contatti coperti."],
-  ["docs","Documenti in una tasca chiusa","Carta d'identità di Mattia · passaporto e permesso di soggiorno in originale di Michelle · tessere sanitarie."],
-  ["borsa","Borsa piccola per Auschwitz e miniera","Sotto i 30×20×10 cm. Lo zaino grande resta a casa quei giorni."],
-  ["trolley","Trolley 10 kg chiusi, giacca e ombrello a portata","Mercoledì e venerdì pioviggine."],
-  ["meteo","Meteo riletto la sera",""],
-  ["sveglia","Sveglia alle 3:00",""]
+  ["checkin1","Check-in Ryanair NAP → KRK (dalle 6:20)","Dall'app, entrambi","r"],
+  ["docs","Documenti: carta d'identità, passaporto e permesso di Michelle, tessere sanitarie",""],
+  ["borsa","Borsa piccola sotto 30×20×10 e powerbank carico",""],
+  ["trolley","Trolley chiusi, sveglia alle 3:00",""]
  ]},
  {phase:"Cracovia", day:"Mercoledì 23", items:[
-  ["aeroporto","A Capodichino entro le 5:00","Gate chiude alle 5:50."],
-  ["treno","Treno per Kraków Główny","8:47 se puntuali, altrimenti 9:17 · 20 zł a testa alla macchinetta o su Koleo."],
-  ["radical","Radical Storage dall'app sul posto","2 bagagli · 9:20 → 16:00 · punto Floriańska o St. Florian's Gate."],
-  ["kantor","Cambio in kantor in Floriańska","50-100 €."],
-  ["mariacki","Biglietti Santa Maria alla cassa","Plac Mariacki 7."],
-  ["czart","Czartoryski alle 13:40 col foglio stampato",""],
-  ["jerzy2","Check-in da Jerzy dalle 16",""]
- ]},
- {day:"Giovedì 24", items:[
-  ["mda","A MDA piattaforma D10 per le 10:25","Bus Lajkonik 10:40, biglietti stampati."],
-  ["ausch","Reception di Auschwitz entro le 12:30","Pass nominativi e documenti in mano. Borsa piccola."],
-  ["bus","Bus di ritorno delle 18:30","È l'ultimo. Biglietto stampato."]
- ]},
- {day:"Venerdì 25", items:[
-  ["koleo","Treno delle 9:08 con il PDF Koleo","Kraków Główny → Wieliczka Rynek-Kopalnia."],
-  ["wiel","Ingresso miniera 15 minuti prima delle 10:15","Biglietti sul telefono."],
-  ["ritorno","Ritorno alla macchinetta di Wieliczka",""],
-  ["farmacia","Farmacia sotto l'Aquila entro le 16:15",""],
-  ["kaz","Kazimierz e cena dove capita","Klezmer facoltativo, concerti alle 20."]
+  ["radical","Radical Storage dall'app, 2 bagagli",""],
+  ["kantor","Cambio in kantor in Floriańska","50-100 €"]
  ]},
  {day:"Sabato 26", items:[
-  ["catt","Cattedrale alla cassa nel cortile del Wawel",""],
-  ["tesori","Ritrovo Tesori alle 12:50 alla mostra «Wawel Scomparso»","Zaini al deposito."],
-  ["checkin2","Check-in Ryanair KRK → BUD dalle 14:35","Dall'app."],
-  ["trolley2","Trolley pronti la sera",""]
+  ["checkin2","Check-in Ryanair KRK → BUD (dalle 14:35)","Dall'app","r"]
  ]},
- {phase:"Budapest", day:"Domenica 27", items:[
-  ["out","Fuori di casa coi trolley alle 10:30","Chiavi come dice Jerzy. Non si torna."],
-  ["stazione","In stazione per le 11:30","Treno 12:06 (o 11:36) · 20 zł a testa."],
-  ["taxi","Taxi del Collect all'arrivo","Atterraggio 15:45."],
-  ["travel","Travelcard 72 h o corse singole",""]
- ]},
- {day:"Lunedì 28", items:[
-  ["parl","Ritrovo Parlamento alle 14:00 a Jászai Mari tér","Statua di Imre Nagy, bandiera verde acqua «Paseando por Europa». Documenti alla guida."],
-  ["molo","Molo 7 Jane Haining rakpart alle 19:05","Crociera 19:20, voucher nel Wallet."]
- ]},
- {day:"Martedì 29", items:[
-  ["pig","MiniPig alle 15:30","Turno 15:40, arrivare 10 minuti prima."],
-  ["checkin3","Check-in Ryanair BUD → NAP dalle 13:30","Dall'app."]
+ {phase:"Budapest", day:"Martedì 29", items:[
+  ["checkin3","Check-in Ryanair BUD → NAP (dalle 13:30)","Dall'app","r"]
  ]},
  {day:"Mercoledì 30", items:[
-  ["checkout","Check-out entro le 11 (noi 8:30)","Cauzione 80 € restituita entro 7 giorni."],
-  ["100e","Bus 100E da Kálvin tér alle 10:45","Si paga a bordo. Volo 13:30."]
+  ["checkout","Check-out entro le 11 e cauzione 80 €",""]
  ]}
 ];
 
