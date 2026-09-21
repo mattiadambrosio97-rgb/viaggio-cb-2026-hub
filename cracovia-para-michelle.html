@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cracovia, qué vemos y qué clima hará</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bg:#f4f5f7; --card:#ffffff; --ink:#1e2430; --ink2:#4a5468; --mute:#7a8496; --line:#dfe3ea;
+  --brick:#b5452f; --sky:#2f6690; --sky-bg:#e6f0f7; --leaf:#2f7d4f; --leaf-bg:#e6f4ea;
+  --gold:#b8811b; --gold-bg:#fbf1dc; --grey-bg:#eef0f3;
+}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 Nunito,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:640px;margin:0 auto;padding-inline:16px;padding-block:24px 56px}
+h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif;margin:0;text-wrap:balance}
+h1{font-size:34px;line-height:1.05;font-weight:700}
+h1 em{font-style:italic;color:var(--brick)}
+.lead{color:var(--ink2);margin:10px 0 0;font-size:16px}
+.rules{margin:22px 0 28px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.rules h2{font-size:20px;margin-bottom:8px}
+.rules ul{margin:0;padding-left:20px;color:var(--ink2);font-size:16px}
+.rules li{margin:5px 0}
+.rules li b{color:var(--ink)}
+.day{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 18px 16px;margin:0 0 18px;box-shadow:0 6px 18px rgba(30,36,48,.06)}
+.head{display:flex;align-items:baseline;gap:12px;margin-bottom:4px}
+.head .n{font-family:Fraunces,serif;font-size:46px;font-weight:700;line-height:1;color:var(--brick)}
+.head .w{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:700}
+.head h2{font-size:22px;line-height:1.15}
+.meteo{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
+.chip{font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--grey-bg);color:var(--ink2)}
+.chip.rain{background:var(--sky-bg);color:var(--sky)} .chip.sun{background:var(--gold-bg);color:var(--gold)} .chip.cold{background:var(--sky-bg);color:var(--sky)}
+.plan{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.plan li{display:grid;grid-template-columns:64px 1fr;gap:10px;align-items:baseline}
+.plan .t{font-variant-numeric:tabular-nums;font-weight:700;color:var(--mute);font-size:14px}
+.plan .x{font-size:16.5px}
+.plan .x b{font-weight:700}
+.plan .x small{display:block;color:var(--ink2);font-size:14.5px;margin-top:1px}
+.clima{margin-top:16px;background:var(--sky-bg);border-radius:14px;padding:14px 16px}
+.clima h3{font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--sky);font-family:Nunito,sans-serif;font-weight:700;margin-bottom:6px}
+.clima ul{margin:0;padding-left:18px;font-size:16px}
+.clima li{margin:3px 0}
+.foot{color:var(--mute);font-size:13px;margin-top:22px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Cracovia,<br>qué vemos y <em>qué clima hará</em></h1>
+<p class="lead">Del 23 al 27 de septiembre. Horarios aproximados, lo justo para entender cada día. El clima es el pronóstico leído el 21 de septiembre: fresco y gris los primeros tres días, después sol.</p>
+
+<section class="rules">
+  <h2>Datos que valen todos los días</h2>
+  <ul>
+    <li><b>Se camina mucho</b>, siempre a pie, sobre piedra y grava. Entre 8 y 12 kilómetros al día.</li>
+    <li><b>Hace fresco</b>: 8-10 grados por la mañana, 14-16 de día hasta el viernes. Viento de 30 km/h casi todos los días.</li>
+    <li><b>En las iglesias se entra con los hombros cubiertos</b> (Santa María el miércoles, la Catedral el sábado).</li>
+    <li><b>El desayuno es siempre afuera</b>: la casa no lo incluye. Salimos y comemos en un lugar cerca.</li>
+    <li><b>Jueves y viernes solo cartera pequeña</b> (tipo canguro): en Auschwitz y en la mina miden los bolsos y los grandes no entran.</li>
+  </ul>
+</section>
+
+<!-- MIÉRCOLES -->
+<section class="day">
+  <div class="head"><div class="n">23</div><div><div class="w">Miércoles</div><h2>Llegada y centro histórico</h2></div></div>
+  <div class="meteo"><span class="chip cold">6-13° de sensación</span><span class="chip rain">llovizna probable (65 %)</span><span class="chip">viento 30 km/h</span><span class="chip">atardecer 18:36</span></div>
+  <ul class="plan">
+    <li><span class="t">3:00</span><span class="x"><b>Despertador en casa</b><small>Vuelo a las 6:20, en Cracovia a las 8:25. Maletas en un depósito y salimos enseguida.</small></span></li>
+    <li><span class="t">10:00</span><span class="x"><b>La plaza grande</b><small>El Rynek, el mercado de los paños, el trompetista en la torre a cada hora. Desayuno.</small></span></li>
+    <li><span class="t">11:00</span><span class="x"><b>Los vitrales de San Francisco y el altar de Santa María</b><small>Dos iglesias a dos pasos. El altar de madera dorada se abre a las 11:50.</small></span></li>
+    <li><span class="t">12:30</span><span class="x"><b>Almuerzo rápido</b></span></li>
+    <li><span class="t">13:50</span><span class="x"><b>La Dama del armiño</b><small>El cuadro de Leonardo, en el museo a tres minutos de casa. Una hora y media.</small></span></li>
+    <li><span class="t">15:30</span><span class="x"><b>Casa y una hora de sueño</b></span></li>
+    <li><span class="t">17:45</span><span class="x"><b>Paseo hasta el castillo</b><small>La calle de los palacios, los patios del Wawel, el atardecer sobre el río.</small></span></li>
+    <li><span class="t">19:00</span><span class="x"><b>Cena en el centro</b><small>Cerca de casa, a dormir temprano.</small></span></li>
+  </ul>
+  <div class="clima">
+    <h3>Clima del día</h3>
+    <ul>
+      <li>Al bajar del avión a las 9 hay <b>6 grados de sensación</b>; de día llega a 13.</li>
+      <li>Llovizna ligera probable durante unas 7 horas, repartida en el día. Humedad 84 %.</li>
+      <li>Viento de 30 km/h, cielo cubierto al 65 %.</li>
+      <li>Todo el día en la calle o en iglesias y museo; por la tarde se pasa por casa antes de la cena.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- JUEVES -->
+<section class="day">
+  <div class="head"><div class="n">24</div><div><div class="w">Jueves</div><h2>Auschwitz-Birkenau</h2></div></div>
+  <div class="meteo"><span class="chip cold">5-14° de sensación</span><span class="chip rain">llovizna a ratos</span><span class="chip">ráfagas 36 km/h</span><span class="chip">cielo cubierto</span></div>
+  <ul class="plan">
+    <li><span class="t">8:30</span><span class="x"><b>Despertador</b><small>Desayuno afuera, bus a las 10:40.</small></span></li>
+    <li><span class="t">13:00</span><span class="x"><b>Visita guiada de los dos campos</b><small>Casi cuatro horas, casi todas al aire libre, caminando sobre grava. Termina a las 16:45.</small></span></li>
+    <li><span class="t">18:30</span><span class="x"><b>Bus de regreso</b><small>En Cracovia a las 20. Algo rápido de comer y a dormir.</small></span></li>
+  </ul>
+  <div class="clima">
+    <h3>Clima del día</h3>
+    <ul>
+      <li><b>El día más frío del viaje</b>: 5 grados de sensación por la mañana, 13-14 por la tarde.</li>
+      <li>Ráfagas de 36 km/h en campo abierto, sin nada que corte el viento; cielo cubierto al 85 %.</li>
+      <li>Llovizna posible a ratos durante 8 horas, poca cantidad (2 mm), pero intermitente.</li>
+      <li>Tres horas seguidas afuera caminando; adentro de los edificios no hay calefacción.</li>
+      <li>Es un lugar de memoria: se va con ropa sobria.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- VIERNES -->
+<section class="day">
+  <div class="head"><div class="n">25</div><div><div class="w">Viernes</div><h2>La mina de sal y el antiguo gueto</h2></div></div>
+  <div class="meteo"><span class="chip cold">9-15° de sensación</span><span class="chip rain">llovizna casi todo el día</span><span class="chip">humedad 87 %</span><span class="chip">atardecer 18:32</span></div>
+  <ul class="plan">
+    <li><span class="t">7:15</span><span class="x"><b>Despertador</b><small>Desayuno al vuelo, tren a las 9:08.</small></span></li>
+    <li><span class="t">10:15</span><span class="x"><b>Mina de sal de Wieliczka</b><small>Guía en italiano. Se baja por 800 escalones, salas y una iglesia entera talladas en la sal. Dos horas y media.</small></span></li>
+    <li><span class="t">13:00</span><span class="x"><b>Almuerzo y tren de regreso</b></span></li>
+    <li><span class="t">15:30</span><span class="x"><b>El gueto de Podgórze</b><small>En la otra orilla del río: la farmacia, la plaza de las sillas de hierro, los muros, la fábrica de Schindler por fuera. Dos horas a pie.</small></span></li>
+    <li><span class="t">17:30</span><span class="x"><b>Kazimierz</b><small>El barrio judío, los patios, la merienda en Plac Nowy. Cena allí, quizá con música klezmer en vivo.</small></span></li>
+  </ul>
+  <div class="clima">
+    <h3>Clima del día</h3>
+    <ul>
+      <li><b>El día más húmedo</b>: 87 % de humedad y llovizna posible durante 15-18 horas.</li>
+      <li>Afuera 9 grados de sensación por la mañana, 15 por la tarde; viento de 35 km/h.</li>
+      <li><b>Dentro de la mina hay 14 grados fijos</b>, todo el año, con humedad alta; escalones de madera y suelo a veces mojado.</li>
+      <li>Por la tarde se camina afuera dos horas sobre calles que estarán mojadas.</li>
+      <li>Del gueto vamos directo a cenar, sin pasar por casa.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SÁBADO -->
+<section class="day">
+  <div class="head"><div class="n">26</div><div><div class="w">Sábado</div><h2>El castillo de los reyes</h2></div></div>
+  <div class="meteo"><span class="chip sun">8-18° de sensación</span><span class="chip sun">sin lluvia</span><span class="chip">viento 30 km/h</span><span class="chip">atardecer 18:29</span></div>
+  <ul class="plan">
+    <li><span class="t">9:15</span><span class="x"><b>Despertador con calma</b><small>Desayuno, paseo hasta la colina.</small></span></li>
+    <li><span class="t">11:15</span><span class="x"><b>Catedral del Wawel</b><small>Las tumbas de los reyes, la campana grande, la capilla con la cúpula de oro.</small></span></li>
+    <li><span class="t">12:50</span><span class="x"><b>El castillo con guía en italiano</b><small>Salones, tapices, el tesoro con la espada de las coronaciones. Dos horas, escaleras y pasillos estrechos.</small></span></li>
+    <li><span class="t">15:00</span><span class="x"><b>Tarde libre</b><small>La cueva del dragón, la orilla del río, aperitivo junto al agua al atardecer.</small></span></li>
+    <li><span class="t">noche</span><span class="x"><b>Cena de despedida de Cracovia</b></span></li>
+  </ul>
+  <div class="clima">
+    <h3>Clima del día</h3>
+    <ul>
+      <li>Cambia el tiempo: <b>sol entre nubes y 18 grados</b> de día, sin lluvia. Humedad baja a 75 %.</li>
+      <li>Por la mañana 8 grados de sensación; a las 18:30 junto al río, 12 grados y viento de 30 km/h.</li>
+      <li>En la Catedral, hombros cubiertos. En el castillo, escaleras de piedra y pasillos estrechos.</li>
+      <li>Se puede pasar por casa antes de la cena.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- DOMINGO -->
+<section class="day">
+  <div class="head"><div class="n">27</div><div><div class="w">Domingo</div><h2>Salimos hacia Budapest</h2></div></div>
+  <div class="meteo"><span class="chip sun">11-20° en Cracovia</span><span class="chip sun">23° en Budapest</span><span class="chip sun">despejado</span></div>
+  <ul class="plan">
+    <li><span class="t">9:15</span><span class="x"><b>Despertador, maletas cerradas</b><small>A las 10:30 salimos de casa para no volver, desayuno con las maletas, después la estación.</small></span></li>
+    <li><span class="t">14:35</span><span class="x"><b>Vuelo a Budapest</b><small>Una hora y diez. Taxi hasta la casa, check-in a las 16:45.</small></span></li>
+    <li><span class="t">18:30</span><span class="x"><b>Primer paseo por el Danubio</b><small>El Puente de las Cadenas y el Parlamento iluminado.</small></span></li>
+  </ul>
+  <div class="clima">
+    <h3>Clima del día</h3>
+    <ul>
+      <li>En Cracovia por la mañana 11 grados, sol.</li>
+      <li><b>En Budapest es casi verano</b>: 23-25 grados de día, 12-13 por la noche, aire seco (humedad 50 %), cielo despejado.</li>
+      <li>Los tres días de Budapest siguen igual: 25-26 grados, sin lluvia. El lunes por la noche, en el barco por el río, 13 grados.</li>
+    </ul>
+  </div>
+</section>
+
+<p class="foot">Pronóstico del 21 de septiembre; se vuelve a mirar la noche antes de salir.</p>
+</div>
+</body>
+</html>

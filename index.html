@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Viaggio Cracovia e Budapest</title>
+<meta name="description" content="Un solo posto per checklist, itinerari, guide e documenti del viaggio del 23-30 settembre 2026.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#14110f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#14110f; --panel:#1e1a17; --panel2:#272220; --line:#3a332f;
+  --ink:#f3ede6; --muted:#a89f96; --accent:#e8b04b; --accent-ink:#1a1408;
+  --ok:#6fcf97; --warn:#f2994a; --danger:#eb5757; --violet:#b48cf2;
+  --r:16px; --shadow:0 8px 30px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{
+  --bg:#f6f1ea; --panel:#ffffff; --panel2:#f1eae1; --line:#e2d9cd;
+  --ink:#1d1814; --muted:#6e645b; --accent:#b97a12; --accent-ink:#fff; --shadow:0 8px 24px rgba(60,40,10,.12);
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f6f1ea; --panel:#ffffff; --panel2:#f1eae1; --line:#e2d9cd;
+    --ink:#1d1814; --muted:#6e645b; --accent:#b97a12; --accent-ink:#fff; --shadow:0 8px 24px rgba(60,40,10,.12);
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Figtree,system-ui,sans-serif;font-size:16px;line-height:1.45}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,sans-serif;margin:0;letter-spacing:-.01em}
+a{color:var(--accent)}
+button{font:inherit;color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:16px 16px 96px}
+header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:8px 0 14px}
+header.top h1{font-size:26px;font-weight:700;line-height:1.1}
+header.top .sub{color:var(--muted);font-size:14px;margin-top:4px}
+.theme{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:13px;cursor:pointer}
+.tabs{position:fixed;left:0;right:0;bottom:0;background:var(--panel);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:6px 4px calc(6px + env(safe-area-inset-bottom));z-index:20}
+.tabs button{flex:1;background:none;border:0;padding:8px 2px;border-radius:12px;font-size:12px;font-weight:600;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer}
+.tabs button .ic{font-size:20px;line-height:1}
+.tabs button.on{color:var(--accent)}
+section.view{display:none}
+section.view.on{display:block}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:0 0 12px;box-shadow:var(--shadow)}
+.card h2{font-size:18px;margin-bottom:6px}
+.card .note{color:var(--muted);font-size:14px}
+.prog{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:14px;color:var(--muted)}
+.prog .bar{flex:1;height:8px;background:var(--panel2);border-radius:99px;overflow:hidden}
+.prog .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.phase{margin:26px 0 4px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.phase:first-child{margin-top:4px}
+.day{margin:18px 0 8px;display:flex;align-items:baseline;justify-content:space-between}
+.day h2{font-size:17px}
+.day .cnt{font-size:12px;color:var(--muted)}
+.item{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 8px;cursor:pointer;user-select:none}
+.item input{appearance:none;-webkit-appearance:none;width:24px;height:24px;flex:0 0 24px;border:2px solid var(--muted);border-radius:8px;margin-top:1px;display:grid;place-items:center;cursor:pointer;background:transparent}
+.item input:checked{background:var(--ok);border-color:var(--ok)}
+.item input:checked::after{content:"";width:12px;height:7px;border:3px solid #10251a;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+.item .t{font-weight:600}
+.item .d{color:var(--muted);font-size:14px;margin-top:2px}
+.item.done .t{text-decoration:line-through;color:var(--muted)}
+.item .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 7px;border-radius:99px;background:var(--panel2);color:var(--muted);margin-left:6px;vertical-align:middle}
+.item .tag.w{background:rgba(242,153,74,.18);color:var(--warn)}
+.item .tag.r{background:rgba(235,87,87,.18);color:var(--danger)}
+.grid{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:560px){.grid{grid-template-columns:1fr 1fr}}
+.page{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;box-shadow:var(--shadow)}
+.page:active{transform:scale(.99)}
+.page h3{font-size:17px;margin-bottom:4px}
+.page p{margin:0;color:var(--muted);font-size:14px}
+.page .who{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--panel2);color:var(--accent);margin-bottom:8px}
+.page .who.es{color:var(--violet)}
+.doc{display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 8px}
+.doc .ic{font-size:22px}
+.doc .t{font-weight:600}
+.doc .d{color:var(--muted);font-size:13px}
+.doc .p{margin-left:auto;font-size:11px;font-weight:700;color:var(--warn);white-space:nowrap}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
+.kv b{font-weight:600;color:var(--muted)}
+.small{font-size:13px;color:var(--muted)}
+.viewer{position:fixed;inset:0;background:var(--bg);z-index:50;display:none;flex-direction:column}
+.viewer.on{display:flex}
+.viewer .bar{display:flex;align-items:center;gap:10px;padding:10px 12px;padding-top:calc(10px + env(safe-area-inset-top));background:var(--panel);border-bottom:1px solid var(--line)}
+.viewer .bar button{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;font-weight:600}
+.viewer .bar .title{flex:1;font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.viewer .bar a{font-size:13px;white-space:nowrap}
+.viewer iframe{flex:1;border:0;width:100%;background:#fff}
+.reset{background:none;border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:12px;color:var(--muted);cursor:pointer}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Cracovia e Budapest</h1>
+      <div class="sub">23-30 settembre 2026 · Mattia e Michelle</div>
+    </div>
+    <button class="theme" id="theme" type="button">Tema</button>
+  </header>
+
+  <!-- CHECKLIST -->
+  <section class="view on" id="v-check">
+    <div class="prog"><span id="pcount">0/0</span><div class="bar"><i id="pbar"></i></div><button class="reset" id="reset" type="button">Azzera</button></div>
+    <div id="checklist"></div>
+    <p class="small">Le spunte restano salvate sul telefono che le fa (memoria del browser). Ognuno spunta le sue.</p>
+  </section>
+
+  <!-- PAGINE -->
+  <section class="view" id="v-pages">
+    <div class="grid" id="pages"></div>
+    <p class="small" style="margin-top:14px">Le pagine si aprono dentro questa schermata; il tasto in alto a destra le apre a tutto schermo.</p>
+  </section>
+
+  <!-- DOCUMENTI -->
+  <section class="view" id="v-docs">
+    <div class="card"><h2>Biglietti e conferme</h2><div class="note">I file stanno nella cartella «documenti» sul telefono e nelle email di conferma su Gmail (qui online non ci sono, per sicurezza). «Stampa» segna quelli da avere anche su carta. Le carte d'imbarco Ryanair stanno solo nell'app.</div></div>
+    <div id="docs"></div>
+  </section>
+
+  <!-- INFO -->
+  <section class="view" id="v-info">
+    <div class="card">
+      <h2>Codici di prenotazione</h2>
+      <div class="kv">
+        <b>Ryanair 23/9</b><span>PSTIKB · FR4045 · posti 14A/14B</span>
+        <b>Ryanair 27/9</b><span>J7DHXA · FR9751 · posti 14E/14F</span>
+        <b>Ryanair 30/9</b><span>O9EZQH · FR4090 · posti 15A/15B</span>
+        <b>Airbnb Jerzy</b><span>HME2PYHHBF · Szpitalna 20 · check-in dalle 16</span>
+        <b>Collect</b><span>5147756049 · Szív utca 46 · check-in dalle 15</span>
+        <b>Auschwitz</b><span>FP/253855 (13:00) · FP/253835 (17:20)</span>
+        <b>Wieliczka</b><span>#2034789 · 10:15 in italiano</span>
+        <b>Czartoryski</b><span>#2563774 · 13:50</span>
+        <b>Wawel</b><span>ordine 201616 · 13:00 in italiano</span>
+        <b>Parlamento</b><span>GYGG45KBH653 (Mattia) · GYG7VKMX6AA5 (Michelle)</span>
+        <b>Crociera</b><span>5166978 · molo 7 · 19:20</span>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Numeri utili</h2>
+      <div class="kv">
+        <b>Emergenze</b><span><a href="tel:112">112</a></span>
+        <b>Jerzy (Airbnb)</b><span><a href="tel:+48602247438">+48 602 247 438</a></span>
+        <b>Collect Residence</b><span><a href="tel:+36300899971">+36 30 089 9971</a></span>
+        <b>Lajkonik bus</b><span><a href="tel:+48660508097">+48 660 508 097</a> (8-20)</span>
+        <b>Paseando por Europa</b><span><a href="tel:+34621027592">+34 621 02 75 92</a></span>
+        <b>Museo Czartoryski</b><span><a href="tel:+48124335744">+48 12 433 57 44</a></span>
+        <b>Wawel biglietti</b><span><a href="tel:+48124225155">+48 12 422 51 55</a></span>
+        <b>Ambasciata d'Italia, Varsavia</b><span><a href="tel:+48605322772">+48 605 322 772</a> (solo emergenze gravi)</span>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Regole dei soldi</h2>
+      <div class="kv">
+        <b>Tetto</b><span>2.200 € per tutto il viaggio · 70 € al giorno in due sul posto</span>
+        <b>POS</b><span>sempre in złoty o fiorini, mai la conversione in euro</span>
+        <b>Contanti</b><span>50-100 € in kantor a Cracovia (Floriańska), mai in aeroporto</span>
+        <b>Cracovia</b><span>già impegnati 782 €; sul posto obiettivo 450 €</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<nav class="tabs">
+  <button data-v="v-check" class="on" type="button"><span class="ic">☑</span>Checklist</button>
+  <button data-v="v-pages" type="button"><span class="ic">▤</span>Pagine</button>
+  <button data-v="v-docs" type="button"><span class="ic">🎫</span>Documenti</button>
+  <button data-v="v-info" type="button"><span class="ic">ⓘ</span>Info</button>
+</nav>
+
+<div class="viewer" id="viewer">
+  <div class="bar">
+    <button type="button" id="vback">← Indietro</button>
+    <div class="title" id="vtitle"></div>
+    <a id="vopen" href="#" target="_blank" rel="noopener">A tutto schermo ↗</a>
+  </div>
+  <iframe id="vframe" title="Pagina"></iframe>
+</div>
+
+<script>
+const CHECK = [
+ {phase:"Prima di partire", day:"Oggi, lunedì 21", items:[
+  ["minipig","Pagare il MiniPig","minipig.cafe · VIP Heaven · mar 29 ore 15:40 · 18.245 Ft. Salvare la conferma.","r"],
+  ["fondi","Fondi sulla carta per il Collect","Booking addebita 386,34 € stanotte, non al check-in.","r"],
+  ["farnesina","Registrare il viaggio su Dove siamo nel mondo","dovesiamonelmondo.it · Polonia 23-27, Ungheria 27-30 · Michelle come accompagnatrice se il modulo lo consente."],
+  ["nome","Controllare il nome di Michelle sui voli","Ryanair mostra «MICHELLE FRANCIA»: deve coincidere col passaporto. La correzione dall'app oggi costa poco.","w"],
+  ["stampa","Stampare 5 fogli","Czartoryski · Auschwitz 13:00 · Auschwitz 17:20 · bus Lajkonik andata e ritorno. In una busta nel trolley."],
+  ["pdf","Copiare la cartella documenti sul telefono","Disponibile offline: in miniera e ad Auschwitz la rete va e viene."],
+  ["jerzy","Messaggio a Jerzy su Airbnb","Istruzioni del lockbox e chiavi di domenica."],
+  ["collect","Messaggio al Collect su Booking","Come funziona il taxi dall'aeroporto: dove aspetta, cartello, numero."]
+ ]},
+ {day:"Martedì 22", items:[
+  ["checkin1","Check-in Ryanair NAP → KRK dalle 6:20","Dall'app, entrambi. Carte d'imbarco solo digitali.","r"],
+  ["carta","Carta abilitata all'estero, notifiche attive","Plafond giornaliero sufficiente."],
+  ["app","App pronte con accesso fatto","Ryanair, Koleo, Jakdojade, Bolt, Airbnb, Booking, GetYourGuide, Radical Storage · Wallet con la crociera · mappe offline di Cracovia e Oświęcim."],
+  ["batterie","Powerbank carico","Il telefono è carta d'imbarco e biglietti. Batterie delle camere in cabina, contatti coperti."],
+  ["docs","Documenti in una tasca chiusa","Carta d'identità di Mattia · passaporto e permesso di soggiorno in originale di Michelle · tessere sanitarie."],
+  ["borsa","Borsa piccola per Auschwitz e miniera","Sotto i 30×20×10 cm. Lo zaino grande resta a casa quei giorni."],
+  ["trolley","Trolley 10 kg chiusi, giacca e ombrello a portata","Mercoledì e venerdì pioviggine."],
+  ["meteo","Meteo riletto la sera",""],
+  ["sveglia","Sveglia alle 3:00",""]
+ ]},
+ {phase:"Cracovia", day:"Mercoledì 23", items:[
+  ["aeroporto","A Capodichino entro le 5:00","Gate chiude alle 5:50."],
+  ["treno","Treno per Kraków Główny","8:47 se puntuali, altrimenti 9:17 · 20 zł a testa alla macchinetta o su Koleo."],
+  ["radical","Radical Storage dall'app sul posto","2 bagagli · 9:20 → 16:00 · punto Floriańska o St. Florian's Gate."],
+  ["kantor","Cambio in kantor in Floriańska","50-100 €."],
+  ["mariacki","Biglietti Santa Maria alla cassa","Plac Mariacki 7."],
+  ["czart","Czartoryski alle 13:40 col foglio stampato",""],
+  ["jerzy2","Check-in da Jerzy dalle 16",""]
+ ]},
+ {day:"Giovedì 24", items:[
+  ["mda","A MDA piattaforma D10 per le 10:25","Bus Lajkonik 10:40, biglietti stampati."],
+  ["ausch","Reception di Auschwitz entro le 12:30","Pass nominativi e documenti in mano. Borsa piccola."],
+  ["bus","Bus di ritorno delle 18:30","È l'ultimo. Biglietto stampato."]
+ ]},
+ {day:"Venerdì 25", items:[
+  ["koleo","Treno delle 9:08 con il PDF Koleo","Kraków Główny → Wieliczka Rynek-Kopalnia."],
+  ["wiel","Ingresso miniera 15 minuti prima delle 10:15","Biglietti sul telefono."],
+  ["ritorno","Ritorno alla macchinetta di Wieliczka",""],
+  ["farmacia","Farmacia sotto l'Aquila entro le 16:15",""],
+  ["kaz","Kazimierz e cena dove capita","Klezmer facoltativo, concerti alle 20."]
+ ]},
+ {day:"Sabato 26", items:[
+  ["catt","Cattedrale alla cassa nel cortile del Wawel",""],
+  ["tesori","Ritrovo Tesori alle 12:50 alla mostra «Wawel Scomparso»","Zaini al deposito."],
+  ["checkin2","Check-in Ryanair KRK → BUD dalle 14:35","Dall'app."],
+  ["trolley2","Trolley pronti la sera",""]
+ ]},
+ {phase:"Budapest", day:"Domenica 27", items:[
+  ["out","Fuori di casa coi trolley alle 10:30","Chiavi come dice Jerzy. Non si torna."],
+  ["stazione","In stazione per le 11:30","Treno 12:06 (o 11:36) · 20 zł a testa."],
+  ["taxi","Taxi del Collect all'arrivo","Atterraggio 15:45."],
+  ["travel","Travelcard 72 h o corse singole",""]
+ ]},
+ {day:"Lunedì 28", items:[
+  ["parl","Ritrovo Parlamento alle 14:00 a Jászai Mari tér","Statua di Imre Nagy, bandiera verde acqua «Paseando por Europa». Documenti alla guida."],
+  ["molo","Molo 7 Jane Haining rakpart alle 19:05","Crociera 19:20, voucher nel Wallet."]
+ ]},
+ {day:"Martedì 29", items:[
+  ["pig","MiniPig alle 15:30","Turno 15:40, arrivare 10 minuti prima."],
+  ["checkin3","Check-in Ryanair BUD → NAP dalle 13:30","Dall'app."]
+ ]},
+ {day:"Mercoledì 30", items:[
+  ["checkout","Check-out entro le 11 (noi 8:30)","Cauzione 80 € restituita entro 7 giorni."],
+  ["100e","Bus 100E da Kálvin tér alle 10:45","Si paga a bordo. Volo 13:30."]
+ ]}
+];
+
+const PAGES = [
+ {f:"itinerario-michelle.html", t:"Itinerario giorno per giorno", d:"Otto giorni, vista settimana e giorno, con le cose da vedere e il perché.", who:"Tutti e due"},
+ {f:"cracovia-para-michelle.html", t:"Cracovia para Michelle", d:"Qué vemos, cuándo y el clima de cada día. En español.", who:"Michelle", es:true},
+ {f:"itinerario-cracovia-operativo.html", t:"Piano operativo Cracovia", d:"Orari, sveglie, biglietti, treni, bus: cosa fare in ogni momento.", who:"Mattia"},
+ {f:"calendario-viaggio.html", t:"Calendario del viaggio", d:"Le otto giornate in colpo d'occhio, con scadenze e prenotazioni.", who:"Tutti e due"},
+ {f:"studio/Cracovia-guida-per-Michelle.html", t:"Guida di Cracovia", d:"La guida lunga con foto e storie dei luoghi, da leggere prima o in treno.", who:"Lettura"}
+];
+
+const DOCS = [
+ ["01_mer23_Museo-Czartoryski_13-50_BIGLIETTI-DA-STAMPARE.pdf","Mer 23 · Museo Czartoryski 13:50","2 biglietti con QR","Stampa"],
+ ["02_gio24_Auschwitz_tour-inglese-13-00_BIGLIETTI-NOMINATIVI.pdf","Gio 24 · Auschwitz tour 13:00","Pass nominativi: D'Ambrosio Mattia, Francia Michelle","Stampa"],
+ ["03_gio24_Auschwitz_pass-gratuiti-17-20_BIGLIETTI-NOMINATIVI.pdf","Gio 24 · Auschwitz rientro 17:20","Pass nominativi","Stampa"],
+ ["03b_gio24_Bus-Lajkonik_andata-10-40.pdf","Gio 24 · Bus Lajkonik 10:40","MDA D10 → Museo Auschwitz · L/13419265/20","Stampa"],
+ ["03c_gio24_Bus-Lajkonik_ritorno-18-30.pdf","Gio 24 · Bus Lajkonik 18:30","Museo Auschwitz → MDA · L/13419266/20","Stampa"],
+ ["04_ven25_Treno-Koleo_Krakow-Wieliczka-9-08_BIGLIETTO.pdf","Ven 25 · Treno 9:08","Kraków Główny → Wieliczka, 2 adulti, col documento",""],
+ ["05_ven25_Wieliczka_miniera-italiano-10-15_BIGLIETTI.pdf","Ven 25 · Miniera 10:15","2 biglietti, ingresso 15 minuti prima",""],
+ ["06_sab26_Wawel-Tesori_tour-italiano-13-00_BIGLIETTI.pdf","Sab 26 · Wawel Tesori 13:00","2 biglietti con QR",""],
+ ["08_lun28_Crociera-Danube-Legend_19-20_VOUCHER.pdf","Lun 28 · Crociera 19:20","Voucher, prenotazione 5166978",""],
+ ["08b_lun28_Crociera-Danube-Legend_wallet.pkpass","Lun 28 · Crociera nel Wallet","File per Apple/Google Wallet",""],
+ ["02b_gio24_Auschwitz_ricevuta-300zl.pdf","Ricevuta Auschwitz","300 zł",""],
+ ["05b_ven25_Wieliczka_fattura-332zl.pdf","Fattura Wieliczka","332 zł",""],
+ ["01b_mer23_Museo-Czartoryski_ricevuta-130zl.pdf","Ricevuta Czartoryski","130 zł",""]
+];
+
+// checklist
+const KEY="viaggio-2026-check";
+let state={}; try{state=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){state={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+const cl=document.getElementById("checklist");
+function renderCheck(){
+  cl.innerHTML="";let tot=0,done=0;
+  CHECK.forEach(g=>{
+    let gd=0;
+    if(g.phase){const ph=document.createElement("div");ph.className="phase";ph.textContent=g.phase;cl.appendChild(ph)}
+    const h=document.createElement("div");h.className="day";
+    h.innerHTML=`<h2>${g.day}</h2><span class="cnt"></span>`;cl.appendChild(h);
+    g.items.forEach(([id,t,d,tag])=>{
+      tot++;const on=!!state[id];if(on){done++;gd++}
+      const el=document.createElement("label");el.className="item"+(on?" done":"");
+      el.innerHTML=`<input type="checkbox" ${on?"checked":""}><div><div class="t">${t}${tag==="r"?'<span class="tag r">oggi</span>':tag==="w"?'<span class="tag w">controlla</span>':""}</div>${d?`<div class="d">${d}</div>`:""}</div>`;
+      el.querySelector("input").addEventListener("change",e=>{state[id]=e.target.checked;save();renderCheck()});
+      cl.appendChild(el);
+    });
+    h.querySelector(".cnt").textContent=`${gd}/${g.items.length}`;
+  });
+  document.getElementById("pcount").textContent=`${done}/${tot}`;
+  document.getElementById("pbar").style.width=(tot?done/tot*100:0)+"%";
+}
+document.getElementById("reset").addEventListener("click",()=>{if(confirm("Azzero tutte le spunte su questo telefono?")){state={};save();renderCheck()}});
+renderCheck();
+
+// pagine
+const pg=document.getElementById("pages");
+PAGES.forEach(p=>{
+  const a=document.createElement("a");a.className="page";a.href=p.f;
+  a.innerHTML=`<span class="who${p.es?" es":""}">${p.who}</span><h3>${p.t}</h3><p>${p.d}</p>`;
+  a.addEventListener("click",e=>{e.preventDefault();openPage(p)});
+  pg.appendChild(a);
+});
+const viewer=document.getElementById("viewer"),frame=document.getElementById("vframe");
+function openPage(p){document.getElementById("vtitle").textContent=p.t;document.getElementById("vopen").href=p.f;frame.src=p.f;viewer.classList.add("on");history.pushState({p:1},"","#"+p.f)}
+function closePage(){viewer.classList.remove("on");frame.src="about:blank"}
+document.getElementById("vback").addEventListener("click",()=>{closePage();if(history.state&&history.state.p)history.back()});
+window.addEventListener("popstate",()=>{if(viewer.classList.contains("on"))closePage()});
+
+// documenti
+const dd=document.getElementById("docs");
+DOCS.forEach(([f,t,d,p])=>{
+  const a=document.createElement("div");a.className="doc";a.title=f;
+  a.innerHTML=`<span class="ic">${f.endsWith(".pkpass")?"👛":"🎫"}</span><div><div class="t">${t}</div><div class="d">${d}</div><div class="d" style="opacity:.7">${f}</div></div>${p?`<span class="p">${p}</span>`:""}`;
+  dd.appendChild(a);
+});
+
+// tab
+document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x===b));
+  document.querySelectorAll("section.view").forEach(s=>s.classList.toggle("on",s.id===b.dataset.v));
+  try{localStorage.setItem(KEY+"-tab",b.dataset.v)}catch(e){}
+  window.scrollTo(0,0);
+}));
+try{const t=localStorage.getItem(KEY+"-tab");if(t){const b=document.querySelector(`.tabs button[data-v="${t}"]`);if(b)b.click()}}catch(e){}
+
+// tema
+const root=document.documentElement;
+try{const th=localStorage.getItem(KEY+"-theme");if(th)root.dataset.theme=th}catch(e){}
+document.getElementById("theme").addEventListener("click",()=>{
+  const cur=root.dataset.theme||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");
+  const nx=cur==="light"?"dark":"light";root.dataset.theme=nx;try{localStorage.setItem(KEY+"-theme",nx)}catch(e){}
+});
+</script>
+</body>
+</html>

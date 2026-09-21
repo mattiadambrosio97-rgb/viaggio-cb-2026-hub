@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cracovia 23-27 settembre, piano operativo</title>
+<style>
+  :root{
+    --bg:#f6f4ef; --card:#ffffff; --ink:#1d1d1b; --muted:#6b6862; --line:#e3dfd6;
+    --ok:#1f7a4d; --okbg:#e6f4ec; --todo:#9a5b00; --todobg:#fff3e0; --info:#2f5d9e; --infobg:#e8effa;
+    --risk:#a12c2c; --riskbg:#fbe9e9; --open:#555; --openbg:#f0efeb; --accent:#7a1f3d;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:980px;margin:0 auto;padding:24px 16px 64px}
+  header{border-bottom:3px solid var(--accent);padding-bottom:14px;margin-bottom:22px}
+  header h1{margin:0 0 4px;font-size:30px;line-height:1.15;color:var(--accent)}
+  header p{margin:0;color:var(--muted)}
+  h2{font-size:22px;margin:34px 0 10px;padding-top:12px;border-top:1px solid var(--line)}
+  h3{font-size:17px;margin:18px 0 6px}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 18px 12px;margin:16px 0}
+  .day .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px}
+  .day .head h2{border:0;margin:0;padding:0;font-size:22px}
+  .day .head .meta{color:var(--muted);font-size:14px}
+  .slot{display:grid;grid-template-columns:96px 1fr;gap:6px 12px;padding:10px 0;border-top:1px dashed var(--line)}
+  .slot:first-of-type{border-top:0}
+  .t{font-weight:700;color:var(--accent);white-space:nowrap}
+  .w{font-weight:600}
+  .n{color:var(--ink);font-size:15px;margin-top:2px}
+  .n b{font-weight:700}
+  .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.02em;padding:2px 8px;border-radius:999px;margin-top:6px}
+  .ok .tag{background:var(--okbg);color:var(--ok)} .todo .tag{background:var(--todobg);color:var(--todo)}
+  .info .tag{background:var(--infobg);color:var(--info)} .risk .tag{background:var(--riskbg);color:var(--risk)}
+  .open .tag{background:var(--openbg);color:var(--open)}
+  .box{border-left:4px solid var(--info);background:var(--infobg);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:15px}
+  .box.warn{border-color:var(--risk);background:var(--riskbg)}
+  .box.good{border-color:var(--ok);background:var(--okbg)}
+  .box h4{margin:0 0 4px;font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+  ul{margin:6px 0 6px 20px;padding:0} li{margin:3px 0}
+  table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:15px;margin:8px 0 14px}
+  th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top;word-wrap:break-word}
+  th{background:#efece5}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+  .mini{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:15px}
+  .mini h4{margin:0 0 6px;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  code{background:#efece5;padding:1px 5px;border-radius:4px;font-size:14px}
+  .foot{color:var(--muted);font-size:13px;margin-top:30px}
+  @media (max-width:600px){ .slot{grid-template-columns:1fr} .t{white-space:normal} header h1{font-size:24px} }
+  @media print{ body{background:#fff} .day{break-inside:avoid;border-color:#bbb} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Cracovia, 23-27 settembre 2026</h1>
+  <p>Piano operativo giorno per giorno: cosa si fa, come ci si sposta, cosa tenere a mente. Mattia e Michelle. Aggiornato il 16/09/2026.</p>
+</header>
+
+<div class="grid">
+  <div class="mini"><h4>Casa</h4>Appartamento di Jerzy, <b>ul. Szpitalna 20/22</b>, centro storico. Rynek a 5 min, stazione e MDA a 12, Wawel a 15, Kazimierz a 12-15. WhatsApp Jerzy <b>+48 602 247 438</b>.</div>
+  <div class="mini"><h4>Codici del palazzo</h4>Portone e cancello a griglia <code>[codice sul telefono]</code>. Deposito bagagli sotto le scale del primo piano, porticina con maniglia a codice <code>[codice sul telefono]</code>. Chiavi: lockbox, istruzioni via Airbnb prima del 23.</div>
+  <div class="mini"><h4>Documenti in tasca</h4>Mattia: carta d'identità. Michelle: passaporto peruviano più permesso di soggiorno in originale. Servono al gate Ryanair e all'ingresso di Auschwitz (biglietti nominativi). Tessera sanitaria europea per entrambi.</div>
+  <div class="mini"><h4>Soldi</h4>Carta ovunque, anche macchinette e bus. Il 23 si cambiano 50-100 € in un kantor di Floriańska (colonna «kupno EUR», buono da 4,20 in su; mai in aeroporto). Niente bancomat gialli Euronet. Pagare sempre in złoty, rifiutare la conversione in euro.</div>
+  <div class="mini"><h4>Sul telefono</h4>PDF di: Ryanair (3 tratte), Auschwitz (tour 13:00 + pass 17:20), bus Lajkonik (link nell'email di bilet@moj-bus.pl), Wieliczka (prenotazione 2034789), treno Koleo del 25, Czartoryski (bilety.pdf, #2563774), Wawel Tesori (ordine 201616). App utili: Koleo, Jakdojade, Bolt, Glovo.</div>
+  <div class="mini"><h4>Clima (previsioni lette il 21/09)</h4>Mer-ven freschi e grigi: 8-11° la mattina, 15-16° di giorno, pioviggine possibile (mer 65 %, gio e ven 30 %), umidità 84-87 %. Giovedì ad Auschwitz percepita 5° la mattina e 13-14° il pomeriggio con raffiche a 36 km/h e cielo coperto: maglione sotto la giacca, cappuccio. Venerdì pioviggine possibile per 15-18 ore: ombrello pieghevole per il ghetto. Sab e dom sole e 20-21°, aria asciutta. Giacca impermeabile, ombrello pieghevole, strato in più per Auschwitz, felpa per la miniera (14° sottoterra). Tramonto 18:36 (mer) → 18:27 (dom). Budapest 25-26° e sereno.</div>
+</div>
+
+<h2>Prima di partire</h2>
+<ul>
+  <li><b>Lunedì 21</b>: rilettura di Viaggiare Sicuri, avvisi sul sito di Santa Maria (chiusure straordinarie del mercoledì), istruzioni di Jerzy nella chat Airbnb (se mancano, scrivergli).</li>
+  <li><b>Martedì 22, dalle 6:20</b>: check-in online Ryanair per Napoli-Cracovia, carte d'imbarco nell'app. Saltarlo costa 55 € a testa. Stessa cosa il 26 per Cracovia-Budapest e il 29 per Budapest-Napoli.</li>
+  <li><b>Martedì 22 sera</b>: trolley da 10 kg pronti (dimensioni Ryanair), zainetto piccolo per Auschwitz (borse ammesse max 35×25×15 cm) e per la miniera (max 20×20×35 cm). Caricabatterie e powerbank: le spine a due poli entrano nelle prese polacche e ungheresi senza adattatore (230 V come in Italia); solo le spine italiane a tre poli non entrano, e non ne portiamo.</li>
+  <li><b>Regola delle mattine</b>: nessuna colazione inclusa, si fa sempre fuori. Salata: <b>Milkbar Tomasza</b>, św. Tomasza 24 (uova, omelette, panini, self-service; mar-sab dalle 8, dom dalle 9, lun chiuso: dati Tripadvisor/Yelp giugno 2026); alternative Charlotte (plac Szczepański, anche uova) e Karmello (Floriańska, dolce). Riserva Żabka. Dalla sveglia alla porta 75 minuti: sveglie gio 8:30, ven 7:15, sab 9:15, dom 9:15.</li>
+  <li><b>Mercoledì 23, sveglia ~3:00</b>: vi accompagnano in auto a Capodichino. In aeroporto entro le 5:00: il gate chiude alle 6:00.</li>
+</ul>
+
+<!-- ===================== MERCOLEDÌ ===================== -->
+<div class="day">
+  <div class="head"><h2>Mercoledì 23</h2><span class="meta">Sveglia 3:00 in Italia · colazione da Milkbar Tomasza alle 9:35 · sforzo medio</span></div>
+
+  <div class="slot ok"><div class="t">06:20 → 08:25</div><div><div class="w">Volo Napoli → Cracovia, Ryanair FR4045</div><div class="n">Trolley 10 kg inclusi. Carte d'imbarco nell'app, documenti a portata di mano al gate.</div><span class="tag">PAGATO 160 €</span></div></div>
+
+  <div class="slot info"><div class="t">08:25 → 08:47</div><div><div class="w">Dall'aereo alla stazione dell'aeroporto</div><div class="n">La stazione è collegata al terminal da una passerella coperta, 5 minuti a piedi seguendo «Train». Biglietto alla macchinetta in banchina (carta) oppure a bordo dal controllore: <b>20 zł a testa</b>. Nessuna prenotazione.</div><span class="tag">SUL POSTO</span></div></div>
+
+  <div class="slot info"><div class="t">08:47 → 09:04</div><div><div class="w">Treno aeroporto → Kraków Główny</div><div class="n">17 minuti. Il 8:47 si prende solo se l'aereo è puntuale (22 min, niente controllo passaporti, 5 min di passerella). Altrimenti <b>9:17</b>, poi 9:47: ogni mezz'ora ai minuti :17 e :47, tutto slitta di 30 min senza danni. Piano B se piove o siete a pezzi: Bolt dall'app, 15-20 min, 60-90 zł; sotto i 55 zł conviene sul treno in due.</div><span class="tag">SUL POSTO</span></div></div>
+
+  <div class="slot info"><div class="t">09:04 → 09:20</div><div><div class="w">A piedi dalla stazione a via Szpitalna</div><div class="n">12 minuti: si esce dalla Galeria Krakowska verso il centro, si attraversano le Planty e si è in Szpitalna. Lungo Floriańska, a due passi, un <b>kantor</b> per cambiare 50-100 €.</div><span class="tag">A PIEDI</span></div></div>
+
+  <div class="slot todo"><div class="t">09:20</div><div><div class="w">Trolley al deposito Radical Storage (decisione del 21/09)</div><div class="n">Si prenota sul posto dall'app Radical Storage (decisione del 21/09): 2 bagagli, 9:20 → 16:00, 15 zł a bagaglio al giorno (30 zł in due), garanzia 10.000 € per bagaglio, cancellazione gratuita. Punti a 4 minuti da casa: <b>«Floriańska Street»</b> (24 ore) o <b>«St. Florian's Gate»</b> (8:30-21). L'indirizzo esatto arriva con la conferma; consegna e ritiro col codice QR. Valori (documenti, fotocamere, powerbank) nello zaino, sempre con noi.<br><b>Riserva a costo zero</b>, sgabuzzino comune del palazzo (istruzioni di Jerzy dell'11/09): via Szpitalna 20/22, portone chiuso → codice <code>[codice sul telefono]</code>; scale a sinistra, cancello a griglia stesso codice; un solo piano; a sinistra, poi ancora a sinistra lungo il corridoio verso l'edificio sul retro; porticina sotto le scale, maniglia a codice <code>[codice sul telefono]</code>. Dalle 11 ci sono le pulizie: passando si può salire, lasciare i trolley in casa e prendere le chiavi. Check-in ufficiale dalle 16, Jerzy avvisa su WhatsApp (+48 602 247 438). <b>Istruzioni del lockbox: ancora da ricevere via Airbnb.</b></div><span class="tag">SUL POSTO ~30 zł</span></div></div>
+
+  <div class="slot open"><div class="t">10:00</div><div><div class="w">Rynek Główny: hejnał, Sukiennice, colazione vera</div><div class="n">Il trombettiere suona dalla torre di Santa Maria a ogni ora. Sotto le Sukiennice le bancarelle di ambra e legno. Obwarzanek dai carretti (3-4 zł).</div><span class="tag">LIBERO</span></div></div>
+
+  <div class="slot open"><div class="t">11:00</div><div><div class="w">Vetrate di Wyspiański, chiesa di San Francesco</div><div class="n">Gratis, 20 minuti, a 3 minuti dal Rynek (plac Wszystkich Świętych). La vetrata «Dio Padre» sopra l'ingresso.</div><span class="tag">LIBERO</span></div></div>
+
+  <div class="slot info"><div class="t">11:50 → 12:30</div><div><div class="w">Basilica di Santa Maria, l'altare di Veit Stoss</div><div class="n">Biglietto <b>20 zł a testa alla cassa di Plac Mariacki 7</b>, ingresso turistico dal lato sud (quello del Rynek è per chi prega). Lun-sab 11:30-18, l'altare si apre alle 11:50: arrivare per le 11:45 e vederlo aprire.</div><span class="tag">SUL POSTO</span></div></div>
+
+  <div class="slot open"><div class="t">12:30</div><div><div class="w">Pranzo veloce</div><div class="n">Posto rapido scelto sul momento (decisione del 21/09): alle 13:40 al museo. Candidati a due passi: Pierogarnia Krakowiacy (Floriańska 55), Bar Tomasza (św. Tomasza); orari non verificati.</div><span class="tag">LIBERO</span></div></div>
+
+  <div class="slot ok"><div class="t">13:50 → ~15:20</div><div><div class="w">Museo Czartoryski, la Dama con l'ermellino</div><div class="n"><b>Pijarska 15</b>, 3 minuti da casa. Ingresso con orario: presentarsi alle 13:40 col PDF sul telefono. Un'ora e mezza. Il biglietto vale 3 mesi anche per le altre sedi del Museo Nazionale (Wyspiański, Szołayski, Matejko, Arsenale).</div><span class="tag">PAGATO 130 zł</span></div></div>
+
+  <div class="slot open"><div class="t">15:25 → 17:30</div><div><div class="w">Trolley dal Radical, casa, sonno</div><div class="n">Ritiro col QR (4 min), poi in casa: se Jerzy ha scritto che è pronta si entra, altrimenti lockbox dalle 16 (istruzioni da ricevere). Doccia e un'ora e mezza di sonno. Se non serve dormire: Barbacane e porta di San Floriano (100 m da casa), cortile del Collegium Maius (Jagiellońska 15, gratis; orologio a figure alle 15).</div><span class="tag">LIBERO</span></div></div>
+  <div class="slot open"><div class="t">17:45 → 18:45</div><div><div class="w">Grodzka, Kanonicza, cortili del Wawel</div><div class="n">15 min lungo Grodzka: chiesa dei Santi Pietro e Paolo (apostoli sulla cancellata, ingresso libero), via Kanonicza (casa di Wojtyła al 19-21), salita al colle senza biglietto, terrazza sulla Vistola. Tramonto ~18:45.</div><span class="tag">LIBERO</span></div></div>
+
+  <div class="slot open"><div class="t">19:00</div><div><div class="w">Cena in centro, vicino a casa</div><div class="n">Dal Wawel si risale per Grodzka. Stodoła (Floriańska 47) o Morskie Oko (plac Szczepański 8), senza prenotazione o con una telefonata nel pomeriggio. Rientro presto. Kazimierz intero venerdì.</div><span class="tag">LIBERO</span></div></div>
+
+  <div class="box"><h4>Da considerare</h4>Giornata senza vincoli tranne il Czartoryski alle 13:50: se dopo la sveglia alle 3 vi sentite a pezzi, si taglia Santa Maria o le vetrate, si tengono museo e riposo. Per gli ordini a domicilio: Glovo con l'account italiano, Pyszne.pl, Wolt; al fattorino il codice del portone.</div>
+</div>
+
+<!-- ===================== GIOVEDÌ ===================== -->
+<div class="day">
+  <div class="head"><h2>Giovedì 24</h2><span class="meta">Sveglia 8:30, fuori alle 9:45, colazione da Milkbar Tomasza 9:45-10:10 · sforzo alto</span></div>
+
+  <div class="slot info"><div class="t">~10:15</div><div><div class="w">A piedi da casa alla stazione bus MDA, piattaforma D10</div><div class="n">Bosacka 18, dietro la stazione ferroviaria: 12 minuti. Margine di 10 minuti sul bus. Documenti in tasca: i biglietti di Auschwitz sono nominativi.</div><span class="tag">A PIEDI</span></div></div>
+
+  <div class="slot ok"><div class="t">10:40 → 12:05</div><div><div class="w">Bus Lajkonik MDA → Muzeum Auschwitz</div><div class="n">Biglietto nel link dell'email di bilet@moj-bus.pl, da mostrare all'autista. Fermata d'arrivo Więźniów Oświęcimia 55, davanti al museo.</div><span class="tag">PAGATO 47,50 zł</span></div></div>
+
+  <div class="slot info"><div class="t">12:05 → 13:00</div><div><div class="w">Controlli, libreria, caffè, bagni</div><div class="n">55 minuti al centro visitatori di Auschwitz I. È la sola finestra della giornata con caffetteria e libreria: a Birkenau ci sono solo i bagni. <b>Borse max 35×25×15 cm</b>, misurate al controllo: una sola borsa piccola, lo zaino grande resta a casa (altrimenti deposito a pagamento all'ingresso, 5 zł con carta). Ritirare le cuffie del tour.</div><span class="tag">SUL POSTO</span></div></div>
+
+  <div class="slot ok"><div class="t">13:00 → 16:45</div><div><div class="w">Tour guidato in inglese, Auschwitz I e Birkenau</div><div class="n">3 ore e 45 con educatore, cuffie e navetta fra i due campi incluse. Parte da Auschwitz I e <b>finisce a Birkenau</b>.</div><span class="tag">PAGATO 70 €</span></div></div>
+
+  <div class="slot info"><div class="t">16:45 → 17:05</div><div><div class="w">Navetta gratuita Birkenau → Auschwitz I</div><div class="n">10 minuti di strada più l'attesa.</div><span class="tag">SUL POSTO</span></div></div>
+
+  <div class="slot ok"><div class="t">17:20 → ~18:15</div><div><div class="w">Rientro libero col pass gratuito</div><div class="n">Facoltativo. Circa un'ora per tornare dove si vuole senza gruppo. Se il tour sfora, il museo fa entrare nel primo slot utile (fasce fino alle 17:50, ultimo ingresso 18:00). Se siete cotti: si salta e si prende il bus delle 17:30 (a Cracovia alle 18:55) senza perdere nulla.</div><span class="tag">PASS GRATUITO</span></div></div>
+
+  <div class="slot ok"><div class="t">18:30 → 19:55</div><div><div class="w">Bus Lajkonik ritorno a MDA</div><div class="n"><b>Ultima corsa del giorno.</b> Essere alla fermata davanti al centro visitatori di Auschwitz I per le 18:20; se si è a Birkenau, lasciare il campo entro le 17:50 per la navetta.</div><span class="tag">PAGATO 42,50 zł</span></div></div>
+
+  <div class="slot open"><div class="t">20:10</div><div><div class="w">Hamburger e a letto</div><div class="n">12 minuti a piedi da MDA; ristorazione veloce nella Galeria Krakowska accanto alla stazione o in centro. La giornata pesa anche emotivamente: niente programmi.</div><span class="tag">LIBERO</span></div></div>
+
+  <div class="box warn"><h4>Da considerare</h4>Acqua e uno spuntino nello zainetto: dentro i campi si evita di mangiare, la pausa buona è fra il tour e il pass. Scarpe comode: a Birkenau si cammina su ghiaia per chilometri. Il bus delle 18:30 è l'ultimo: nessuna deviazione dopo le 18:00.</div>
+</div>
+
+<!-- ===================== VENERDÌ ===================== -->
+<div class="day">
+  <div class="head"><h2>Venerdì 25</h2><span class="meta">Sveglia 7:15, fuori alle 8:30, colazione rapida da Milkbar Tomasza 8:30-8:48 (apre alle 8; riserva Żabka) · sforzo medio</span></div>
+
+  <div class="slot info"><div class="t">08:50</div><div><div class="w">A piedi alla stazione Kraków Główny</div><div class="n">12 minuti. I treni per Wieliczka partono dai binari della stazione principale, indicazione «Wieliczka Rynek-Kopalnia» (linea SKA1).</div><span class="tag">A PIEDI</span></div></div>
+
+  <div class="slot ok"><div class="t">09:08 → 09:31</div><div><div class="w">Treno KMŁ 33214 Kraków Główny → Wieliczka Rynek-Kopalnia</div><div class="n">PDF Koleo sul telefono, si mostra al controllore. Se si perde, il successivo è alle 9:38 (arrivo 10:01): il tour è alle 10:15, si arriva lo stesso.</div><span class="tag">PAGATO 3,46 €</span></div></div>
+
+  <div class="slot info"><div class="t">09:31 → 09:45</div><div><div class="w">A piedi dalla stazione al pozzo Daniłowicz</div><div class="n">10 minuti in salita, cartelli «Kopalnia Soli». Ingresso turistico: biglietteria, controllo bagagli (<b>zainetto max 20×20×35 cm</b>, altrimenti deposito a pagamento), ritrovo del gruppo italiano.</div><span class="tag">A PIEDI</span></div></div>
+
+  <div class="slot ok"><div class="t">10:15 → ~12:30</div><div><div class="w">Miniera di sale, Percorso Turistico in italiano</div><div class="n">Biglietto PDF (prenotazione 2034789), 2 interi con Torre di Gradazione. Circa 3 km sotto terra, 800 scalini quasi tutti in discesa, 14° costanti: felpa. Alla fine, se vi va, il <b>Museo sotterraneo</b> incluso nel biglietto (+1 ora), poi risalita in ascensore.</div><span class="tag">PAGATO 76,98 €</span></div></div>
+
+  <div class="slot open"><div class="t">dopo</div><div><div class="w">Torre di Gradazione nel parco, oppure pranzo a Wieliczka</div><div class="n">La torre è inclusa nel biglietto: passerella di rami di legno con l'aria salina, 20 minuti, vista sulla cittadina. Pranzo veloce lì o al rientro.</div><span class="tag">A SCELTA</span></div></div>
+
+  <div class="slot info"><div class="t">~13:00-13:40</div><div><div class="w">Treno di ritorno Wieliczka → Kraków Główny</div><div class="n">Biglietto alla macchinetta della stazione di Wieliczka Rynek-Kopalnia (carta), ~7-10 zł a testa, oppure su Koleo dal telefono. Treni ogni mezz'ora, 23 minuti.</div><span class="tag">SUL POSTO</span></div></div>
+
+  <div class="slot info"><div class="t">15:30 → 17:30</div><div><div class="w">Passeggiata del ghetto, Podgórze</div><div class="n">Da Kazimierz si attraversa la Vistola sul <b>ponte Bernatek</b> (le sculture sospese). Poi, nell'ordine: <b>Farmacia sotto l'Aquila</b> (plac Bohaterów Getta 18, 22 zł a testa alla cassa, aperta 9-17: entrare entro le 16:15); <b>piazza degli Eroi del Ghetto</b> con le 70 sedie di bronzo vuote; i due tratti superstiti del <b>muro del ghetto</b> in via Lwowska 25-29 e via Limanowskiego 62, a forma di lapidi; la <b>Fabbrica di Schindler dall'esterno</b> in Lipowa 4, 10 minuti più in là. Tutto a piedi, 2 ore.</div><span class="tag">SUL POSTO</span></div></div>
+
+  <div class="slot open"><div class="t">17:30 → 19:30</div><div><div class="w">Kazimierz con calma</div><div class="n">Dal ghetto si torna sul ponte Bernatek: plac Nowy (zapiekanka), Szeroka e le sinagoghe dall'esterno, i cortili. Museo dell'Ingegneria saltato (21/09).</div><span class="tag">LIBERO</span></div></div>
+
+  <div class="slot open"><div class="t">19:30</div><div><div class="w">Cena dove capita; klezmer in via Szeroka facoltativo</div><div class="n">Se vi va la musica: concerti alle 20 (verificato il 21/09 sui siti): Awiw n. 13 (di norma gratis, mancia ai musicisti), Klezmer Hois n. 6 (+40-50 zł a testa, tel. +48 12 411 1245), Ariel n. 18 (tel. +48 512 093 205). Si sceglie sul posto; se la sala è piena si passa al vicino.</div><span class="tag">LIBERO</span></div></div>
+
+  <div class="box"><h4>Da considerare</h4>Il tour della miniera dura 2,5-3 ore e a metà c'è la pausa con bar e bagni. Fuori dalla miniera un'ora e mezza di margine: se si esce tardi, il ghetto si accorcia dalla Farmacia in poi, la piazza e i muri si vedono anche alle 18. Zoo, MuFo, Underground e Remuh sono fuori per scelta.</div>
+</div>
+
+<!-- ===================== SABATO ===================== -->
+<div class="day">
+  <div class="head"><h2>Sabato 26</h2><span class="meta">Sveglia 9:15, fuori alle 10:30, colazione da Charlotte 10:30-11:00 · sforzo medio</span></div>
+
+  <div class="slot open"><div class="t">09:30</div><div><div class="w">Colazione lenta, Rynek</div><div class="n">Schindler saltato (decisione del 21/09; mai prenotato). Nessun orario prima delle 11: Karmello (Floriańska) o Charlotte (plac Szczepański).</div><span class="tag">LIBERO</span></div></div>
+
+  <div class="slot info"><div class="t">11:00</div><div><div class="w">A piedi da casa al Wawel</div><div class="n">15 minuti lungo Grodzka. Si sale al colle dalla rampa di via Kanonicza o da Podzamcze.</div><span class="tag">A PIEDI</span></div></div>
+
+  <div class="slot info"><div class="t">11:15 → 12:15</div><div><div class="w">Cattedrale del Wawel</div><div class="n">Biglietto <b>26 zł a testa alla cassa nel cortile</b> (Wawel 3), con la carta, senza orario: cattedrale, cripte reali, campana di Sigismondo, Museo Arcidiocesano. Sabato 9-16. Un'ora.</div><span class="tag">ALLA CASSA</span></div></div>
+
+  <div class="slot open"><div class="t">12:15 → 12:45</div><div><div class="w">Spuntino sul colle</div><div class="n">Bar nel cortile o un obwarzanek: il tour dura quasi due ore, meglio non arrivarci a digiuno.</div><span class="tag">LIBERO</span></div></div>
+
+  <div class="slot ok"><div class="t">12:50 → 14:50</div><div><div class="w">«Wawel: I Tesori Più Preziosi», tour guidato in italiano</div><div class="n"><b>Ritrovo con la guida alle 12:50 alla mostra «Wawel Scomparso»</b>, che è l'ingresso dei Sotterranei del Castello (chiedere «Wawel Zaginiony»). 110 minuti: Castello piani I e II, Sotterranei, Tesoro della Corona, Armeria. Scale e passaggi stretti. I <b>Giardini Reali</b> sono inclusi: si vedono dopo, con calma.</div><span class="tag">PAGATO 310 zł</span></div></div>
+
+  <div class="slot open"><div class="t">dalle 15</div><div><div class="w">Libero: Giardini Reali, Tana del Drago, Vistola</div><div class="n">La Tana del Drago (15 zł) si scende dal colle e si esce sul fiume vicino alla statua che sputa fuoco. Poi lungofiume fino al <b>Forum Przestrzenie</b>, il bar sulla riva con vista sul castello, per l'aperitivo al tramonto (~18:45).</div><span class="tag">LIBERO</span></div></div>
+
+  
+  <div class="slot open"><div class="t">sera</div><div><div class="w">Cena d'addio a Cracovia</div><div class="n">Kazimierz o centro. Trolley da preparare prima di uscire: domenica si esce di casa alle 11:40.</div><span class="tag">LIBERO</span></div></div>
+
+  <div class="box"><h4>Da considerare</h4>La Cattedrale di domenica apre solo alle 12:30: va fatta sabato. Il ritrovo dei Tesori è l'unico orario rigido della giornata: dalle 12:45 stare davanti all'ingresso dei Sotterranei. <b>Riserve per la pioggia</b> (valide tutti i giorni): Rynek Underground sotto la piazza; Museo delle torture in centro (~30 zł, mezz'ora).</div>
+</div>
+
+<!-- ===================== DOMENICA ===================== -->
+<div class="day">
+  <div class="head"><h2>Domenica 27</h2><span class="meta">Sveglia 9:15, fuori coi trolley alle 10:30, colazione da Milkbar Tomasza, stazione alle 11:30 · sforzo basso</span></div>
+
+  <div class="slot open"><div class="t">09:15</div><div><div class="w">Sveglia, trolley chiusi</div><div class="n">Controllo caricabatterie, documenti, PDF di Budapest sul telefono.</div><span class="tag">CASA</span></div></div>
+  <div class="slot info"><div class="t">10:30</div><div><div class="w">Fuori di casa per sempre, coi trolley</div><div class="n">Check-out: chiavi come dice Jerzy (lockbox o in casa). Non si torna.</div><span class="tag">LOGISTICA</span></div></div>
+  <div class="slot open"><div class="t">10:35 → 11:25</div><div><div class="w">Colazione da Milkbar Tomasza coi trolley</div><div class="n">św. Tomasza 24, domenica dalle 9. Ultimo giro sul Rynek se avanza tempo.</div><span class="tag">LIBERO</span></div></div>
+  <div class="slot info"><div class="t">11:30 → 11:45</div><div><div class="w">A piedi coi trolley alla stazione</div><div class="n">12 minuti. Biglietto per l'aeroporto alla macchinetta o su Koleo, 20 zł a testa. Se si è pronti prima c'è l'11:36.</div><span class="tag">SUL POSTO</span></div></div>
+  <div class="slot info"><div class="t">12:06 → 12:23</div><div><div class="w">Treno Kraków Główny → aeroporto</div><div class="n">Riserva: 12:36 (arrivo 12:53). Volo alle 14:35, gate chiude alle 14:05: con il 12:06 si è in aeroporto con oltre due ore di margine.</div><span class="tag">SUL POSTO</span></div></div>
+
+  <div class="slot ok"><div class="t">14:35 → 15:45</div><div><div class="w">Volo Cracovia → Budapest, Ryanair FR9751</div><div class="n">Trolley inclusi. Check-in online fatto sabato. A Budapest vi aspetta il taxi incluso del Collect Residence.</div><span class="tag">PAGATO 78,30 €</span></div></div>
+
+  <div class="box good"><h4>Da considerare</h4>Gli złoty avanzati si spendono in aeroporto o si tengono: a Budapest servono fiorini. Niente da fare a Cracovia la domenica mattina che valga il rischio di correre.</div>
+</div>
+
+<h2>Spostamenti in sintesi</h2>
+<table>
+  <tr><th style="width:34%">Tratta</th><th>Mezzo</th><th style="width:26%">Biglietto</th></tr>
+  <tr><td>Aeroporto ↔ stazione centrale</td><td>Treno, 17 min, ai minuti :17/:47 dall'aeroporto e :06/:36 dalla città</td><td>20 zł a testa, macchinetta o bordo</td></tr>
+  <tr><td>Casa ↔ Rynek / Wawel / Kazimierz / stazione</td><td>A piedi: 5 / 15 / 12-15 / 12 min</td><td>niente</td></tr>
+  <tr><td>Cracovia ↔ Auschwitz</td><td>Bus Lajkonik da MDA D10, 85 min</td><td>pagato, andata e ritorno</td></tr>
+  <tr><td>Cracovia → Wieliczka</td><td>Treno 9:08, 23 min</td><td>pagato (Koleo)</td></tr>
+  <tr><td>Wieliczka → Cracovia</td><td>Treno ogni mezz'ora</td><td>macchinetta a Wieliczka, ~7-10 zł</td></tr>
+  <tr><td>Kazimierz ↔ Podgórze</td><td>A piedi, ponte Bernatek, 10 min</td><td>niente</td></tr>
+  <tr><td>Se serve un tram</td><td>App Jakdojade o macchinetta a bordo</td><td>20 min 4 zł, 60 min 6 zł</td></tr>
+</table>
+
+<h2>Cosa è pagato e cosa resta</h2>
+<table>
+  <tr><th style="width:52%">Voce</th><th>Stato</th></tr>
+  <tr><td>Voli (3 tratte, trolley inclusi)</td><td>pagati, 328,90 €</td></tr>
+  <tr><td>Appartamento di Jerzy, 4 notti</td><td>prima rata pagata 116,48 €, due rate a ottobre e novembre</td></tr>
+  <tr><td>Auschwitz tour 13:00 + pass 17:20</td><td>pagato, 70 €</td></tr>
+  <tr><td>Bus Lajkonik andata e ritorno</td><td>pagato, 20,87 €</td></tr>
+  <tr><td>Wieliczka in italiano 10:15</td><td>pagato, 76,98 €</td></tr>
+  <tr><td>Treno per Wieliczka 9:08</td><td>pagato, 3,46 €</td></tr>
+  <tr><td>Czartoryski 13:50</td><td>pagato, 30,02 €</td></tr>
+  <tr><td>Wawel Tesori in italiano 13:00</td><td>pagato, 71,58 €</td></tr>
+  <tr><td>Santa Maria, Cattedrale, Farmacia, treni aeroporto e ritorno Wieliczka</td><td>alla cassa: circa 70 + 52 + 44 + 80 + 20 zł</td></tr>
+  <tr><td>Schindler Krakow4you</td><td>da decidere, 89,28 € in due</td></tr>
+  <tr><td>Cene</td><td>si decidono sul posto (21/09); klezmer in Szeroka ven 19:30</td></tr>
+</table>
+
+<h2>Contatti utili</h2>
+<ul>
+  <li>Jerzy (casa): WhatsApp +48 602 247 438</li>
+  <li>Museo Czartoryski, prenotazioni: rezerwacja@mnk.pl, +48 12 433 57 44 (feriali 9-16)</li>
+  <li>Lajkonik bus: biuro@lajkonikbus.pl</li>
+  <li>Emergenze: 112. Ambasciata d'Italia a Varsavia, numeri in ambvarsavia.esteri.it</li>
+</ul>
+
+<p class="foot">Fonti e verifiche in itinerario.md, STATO.md e tracker-budget.md. Dati non verificati segnalati nel testo. Questo file sostituisce itinerario-cracovia.html dal 16/09/2026.</p>
+</div>
+</body>
+</html>

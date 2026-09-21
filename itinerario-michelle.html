@@ -1,0 +1,325 @@
+<title>Cracovia e Budapest con Michelle</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#0f1a2b; --bg2:#13213a; --card:#182842; --card2:#1f3252; --line:#2a3f60;
+  --ink:#f3eddf; --ink2:#c9d0dc; --mute:#8d9bb3;
+  --gold:#e9b453; --gold-ink:#1a1405;
+  --krk:#d8694f; --bud:#4fb9ad;
+  --ok:#5ccb8a; --cash:#7fb2ff; --todo:#f0a24a; --prop:#c79bff;
+  --shadow:0 12px 30px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{
+  --bg:#f2f0ea; --bg2:#e9e6dd; --card:#ffffff; --card2:#f5f2ea; --line:#dcd7cb;
+  --ink:#17202e; --ink2:#3a4658; --mute:#6c778a;
+  --gold:#b8811b; --gold-ink:#fff8e8;
+  --krk:#b94b32; --bud:#1f8c81;
+  --ok:#1f8a4f; --cash:#2a63c9; --todo:#b86a10; --prop:#7a48c9;
+  --shadow:0 10px 26px rgba(30,30,20,.12);
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f2f0ea; --bg2:#e9e6dd; --card:#ffffff; --card2:#f5f2ea; --line:#dcd7cb;
+    --ink:#17202e; --ink2:#3a4658; --mute:#6c778a;
+    --gold:#b8811b; --gold-ink:#fff8e8;
+    --krk:#b94b32; --bud:#1f8c81;
+    --ok:#1f8a4f; --cash:#2a63c9; --todo:#b86a10; --prop:#7a48c9;
+    --shadow:0 10px 26px rgba(30,30,20,.12);
+  }
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{margin:0;color:var(--ink);font:16px/1.5 Figtree,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:radial-gradient(1200px 500px at 50% -10%, var(--bg2), var(--bg) 70%);min-height:100%}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:22px 48px}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,"Segoe UI",sans-serif;text-wrap:balance;margin:0}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:22px}
+header.top h1{font-size:clamp(30px,6vw,46px);line-height:1.02;font-weight:800;letter-spacing:-.02em}
+header.top h1 em{font-style:normal;color:var(--gold)}
+header.top .dates{color:var(--mute);font-size:15px;margin-top:6px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--mute)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
+
+/* ------- settimana ------- */
+.route{display:flex;align-items:center;gap:10px;margin:0 0 16px;font-size:13px;color:var(--mute);flex-wrap:wrap}
+.route b{color:var(--ink);font-weight:600}
+.route .seg{flex:1 1 60px;height:2px;background:linear-gradient(90deg,var(--krk),var(--bud));border-radius:2px;min-width:40px}
+.switch{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.switch button{font:inherit;font-weight:600;font-size:14px;color:var(--mute);background:none;border:0;border-radius:999px;padding:6px 14px;cursor:pointer}
+.switch button.on{background:var(--gold);color:var(--gold-ink)}
+.switch button:focus-visible{outline:2px solid var(--gold)}
+.week{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.dayc{position:relative;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 14px 14px;box-shadow:var(--shadow);overflow:hidden}
+.dayc::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--krk)}
+.dayc.bud::before{background:var(--bud)}
+.dayc.mix::before{background:linear-gradient(90deg,var(--krk) 45%,var(--bud) 55%)}
+.dayc .head{display:flex;align-items:flex-end;gap:10px;margin-bottom:6px;cursor:pointer;border:0;background:none;padding:0;text-align:left;color:inherit;font:inherit;width:100%}
+.dayc .num{font-family:"Bricolage Grotesque",sans-serif;font-size:44px;font-weight:800;line-height:.95;letter-spacing:-.03em;color:var(--ink)}
+.dayc .wd{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--mute);font-weight:600}
+.dayc .city{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--krk)}
+.dayc.bud .city{color:var(--bud)} .dayc.mix .city{color:var(--gold)}
+.dayc h3{font-size:17px;line-height:1.2;font-weight:700}
+.dayc .mood{font-size:13px;color:var(--mute);margin:0 0 10px}
+.cl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.cl li{border-left:3px solid var(--line);padding:6px 8px 7px 10px;background:var(--card2);border-radius:0 9px 9px 0}
+.cl .t{font-variant-numeric:tabular-nums;font-size:12px;font-weight:700;color:var(--gold)}
+.cl .w{font-weight:600;font-size:14px;line-height:1.3}
+.cl .n{font-size:13px;color:var(--ink2);margin-top:3px;line-height:1.45}
+.cl .chip{margin-top:5px;font-size:10.5px;padding:1px 7px}
+.cl .ok{border-left-color:var(--ok)} .cl .cash{border-left-color:var(--cash)} .cl .todo{border-left-color:var(--todo)}
+.cl .prop{border-left-color:var(--prop);border-left-style:dashed} .cl .free{border-left-color:var(--mute)}
+.cl .ok .chip{color:var(--ok)} .cl .cash .chip{color:var(--cash)} .cl .todo .chip{color:var(--todo)} .cl .prop .chip{color:var(--prop)} .cl .free .chip{color:var(--mute)}
+.dayc .tipc{margin-top:10px;font-size:12.5px;color:var(--mute);border-top:1px dashed var(--line);padding-top:8px}
+@media (max-width:900px){ .week{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:560px){
+  .route{display:none}
+  .week{grid-template-columns:1fr}
+}
+
+/* ------- giorno ------- */
+.day{display:none}
+.day.on{display:block}
+.week-view.off{display:none}
+.daynav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:18px;position:sticky;top:env(safe-area-inset-top,0px);
+  background:var(--bg);padding-block:10px;z-index:3;border-bottom:1px solid var(--line)}
+.btn{font:inherit;font-weight:600;font-size:14px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
+.btn:hover,.btn:focus-visible{border-color:var(--gold);outline:none}
+.btn.gold{background:var(--gold);color:var(--gold-ink);border-color:var(--gold)}
+.dayhead{display:flex;align-items:flex-end;gap:18px;margin-bottom:20px;flex-wrap:wrap}
+.dayhead .num{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(64px,14vw,96px);font-weight:800;line-height:.9;letter-spacing:-.04em}
+.dayhead .num small{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-bottom:6px}
+.dayhead h2{font-size:clamp(24px,5vw,34px);line-height:1.1;font-weight:700}
+.dayhead .city{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.dayhead .mood{color:var(--mute);font-size:15px;margin-top:6px}
+.tl{position:relative;padding-left:0;list-style:none;margin:0;display:flex;flex-direction:column;gap:10px}
+.ev{display:grid;grid-template-columns:86px 1fr;gap:0 14px;position:relative}
+.ev .t{font-variant-numeric:tabular-nums;font-weight:700;font-size:15px;color:var(--gold);padding-top:14px;line-height:1.25}
+.ev .t small{display:block;font-weight:500;color:var(--mute);font-size:12px}
+.ev .box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;border-left:4px solid var(--line)}
+.ev .w{font-weight:700;font-size:16.5px;line-height:1.3}
+.ev .n{color:var(--ink2);font-size:14.5px;margin-top:4px}
+.ev .n b{color:var(--ink)}
+.chip{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 9px;border-radius:999px;margin-top:8px;border:1px solid currentColor}
+.ok .box{border-left-color:var(--ok)} .ok .chip{color:var(--ok)}
+.cash .box{border-left-color:var(--cash)} .cash .chip{color:var(--cash)}
+.todo .box{border-left-color:var(--todo)} .todo .chip{color:var(--todo)}
+.prop .box{border-left-color:var(--prop);border-style:dashed} .prop .chip{color:var(--prop)}
+.free .box{border-left-color:var(--mute)} .free .chip{color:var(--mute)}
+.tip{margin-top:20px;background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:15px;color:var(--ink2)}
+.tip .eyebrow{display:block;margin-bottom:4px}
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:26px}
+@media (max-width:560px){
+  .ev{grid-template-columns:1fr;gap:2px}
+  .ev .t{padding-top:0;font-size:14px}
+  .ev .t small{display:inline;margin-left:6px}
+}
+footer{margin-top:40px;color:var(--mute);font-size:13px;text-align:center}
+@media (prefers-reduced-motion: reduce){.dayc{transition:none}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">23 → 30 settembre 2026</div>
+      <h1>Cracovia e Budapest,<br><em>otto giorni in due</em></h1>
+      <div class="dates">Mattia e Michelle · quattro notti sulla Vistola, tre sul Danubio</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+    <div class="switch" role="tablist"><button type="button" data-go="week" class="on" id="swWeek">Settimana</button><button type="button" data-go="day" id="swDay">Giorno</button></div>
+    <div class="legend">
+      <span><i style="background:var(--ok)"></i> prenotato</span>
+      <span><i style="background:var(--cash)"></i> si paga lì</span>
+      <span><i style="background:var(--todo)"></i> da prenotare</span>
+      <span><i style="background:var(--prop)"></i> proposta da decidere insieme</span>
+      <span><i style="background:var(--mute)"></i> libero</span>
+    </div>
+    </div>
+  </header>
+
+  <section class="week-view" id="week">
+    <div class="route"><b>Napoli</b><span class="seg"></span><b>Cracovia</b> <span>23 · 27</span><span class="seg"></span><b>Budapest</b> <span>27 · 30</span><span class="seg"></span><b>Napoli</b></div>
+    <div class="week" id="weekgrid"></div>
+  </section>
+
+  <section class="day" id="day"></section>
+
+  <footer>Toccando il numero del giorno si apre la vista grande di quella giornata.</footer>
+</div>
+
+<script>
+const DAYS = [
+{ id:"23", wd:"Mercoledì", n:"23", city:"Cracovia", cls:"", title:"Arrivo e centro storico",
+  mood:"Sveglia alle tre e volo all'alba. Poi la città vecchia a piedi, con un solo orario fisso: il museo alle 13:50.",
+  ev:[
+   ["06:20","08:25","ok","Volo Napoli → Cracovia","Ryanair. Un trolley da 10 kg a testa in cabina, già incluso. In aeroporto entro le 5: il gate chiude alle 6. Tu porti passaporto e permesso di soggiorno in originale, servono al gate e ad Auschwitz.","Prenotato"],
+   ["08:47","09:04","cash","Treno dall'aeroporto alla stazione centrale","La stazione è attaccata al terminal da una passerella coperta, cinque minuti seguendo «Train». Diciassette minuti di viaggio, 20 zł a testa alla macchinetta o a bordo. Il 8:47 si prende solo se l'aereo è puntuale; altrimenti il 9:17, e tutto slitta di mezz'ora senza problemi.","Si paga lì"],
+   ["09:20","","todo","Trolley al deposito bagagli","Li lasciamo in un deposito Radical Storage a quattro minuti da casa nostra (via Szpitalna 20/22, dentro le mura: il Rynek a cinque minuti): 15 zł a bagaglio, assicurati, si ritirano col codice QR nel pomeriggio. Lo zaino coi documenti e le fotocamere resta con noi. Il check-in in casa è dalle 16; Jerzy, il padrone di casa, avvisa su WhatsApp appena è pronta, di solito verso le 13. Lungo Floriańska, la via accanto, cambiamo 50-100 € in un kantor.","Da prenotare"],
+   ["10:00","","free","Rynek Główny, la piazza grande","La piazza medievale più grande d'Europa, 200 metri per lato, disegnata nel 1257. In mezzo le Sukiennice, il mercato dei panni, oggi bancarelle d'ambra e legno. Dalla torre di Santa Maria, a ogni ora, un trombettiere suona l'hejnał e si ferma a metà nota: ricorda la sentinella colpita da una freccia tartara mentre dava l'allarme. Colazione con l'obwarzanek, la ciambella di pane dai carretti blu.","Libero"],
+   ["11:00","","free","Le vetrate di Wyspiański","Chiesa di San Francesco, a tre minuti dalla piazza, ingresso libero. Stanisław Wyspiański, pittore e drammaturgo di fine Ottocento, ha disegnato le vetrate: sopra l'ingresso «Dio Padre» nell'atto di creare il mondo, quasi 9 metri di vetro colorato. Di fronte, al numero 3 di via Franciszkańska, la finestra da cui Giovanni Paolo II parlava ai cracoviani.","Libero"],
+   ["11:50","12:30","cash","Santa Maria e l'altare di Veit Stoss","La basilica gotica sul Rynek con le due torri diverse. Dentro, il polittico in legno di tiglio scolpito da Veit Stoss fra il 1477 e il 1489, il più grande altare gotico d'Europa: 13 metri, 200 figure, la Dormizione della Vergine al centro. I nazisti lo smontarono e lo portarono a Norimberga; tornò nel 1946. Le ante si aprono alle 11:50: arriviamo alle 11:45 per vederle aprire. Biglietto 20 zł alla cassa di plac Mariacki 7, ingresso turistico dal lato sud.","Si paga lì"],
+   ["12:30","","free","Pranzo veloce in centro","Si decide sul momento, un posto rapido: alle 13:40 dobbiamo essere al museo, a tre minuti da casa.","Libero"],
+   ["13:50","15:20","ok","Museo Czartoryski, la Dama con l'ermellino","A tre minuti da casa, in via Pijarska 15. Il quadro è di Leonardo, 1489-1490: Cecilia Gallerani, amante del duca di Milano, con l'ermellino che è il simbolo del duca. Comprato dai Czartoryski nel 1798, nascosto durante le guerre, rubato dai nazisti e appeso nell'ufficio del governatore Hans Frank al Wawel, ritrovato nel 1946 in Baviera. Nelle altre sale un paesaggio di Rembrandt e il vuoto lasciato dal Raffaello mai più ritrovato. Un'ora e mezza; ci presentiamo alle 13:40 col PDF.","Prenotato"],
+   ["15:25","17:30","free","Trolley, casa e un'ora di sonno","Si ritirano i trolley al deposito (quattro minuti) e si entra in casa: Jerzy avvisa su WhatsApp appena è pronta, altrimenti chiavi dal lockbox dalle 16. Doccia e un'ora e mezza a letto: alle tre eravamo svegli, e domani è Auschwitz. Se invece stiamo bene: Barbacane e porta di San Floriano a cento metri da casa, poi il cortile del Collegium Maius, l'università dove studiò Copernico.","Libero"],
+   ["17:45","18:45","free","Grodzka, Kanonicza e i cortili del Wawel al tramonto","Quindici minuti lungo via Grodzka: la chiesa dei Santi Pietro e Paolo con i dodici apostoli di pietra sulla cancellata (gratis), poi via Kanonicza, la strada più bella della città, dove abitava Karol Wojtyła da prete. Si sale sul colle del Wawel senza biglietto: cortili e terrazza sulla Vistola, con il tramonto verso le 18:45. Il castello dentro lo vediamo sabato con la guida.","Libero"],
+   ["19:00","","free","Cena in centro, vicino a casa","Dal Wawel si risale per Grodzka fino al Rynek: cena dove ci va: Stodoła in Floriańska a tre minuti dal portone, Morskie Oko a plac Szczepański, U Babci Maliny nella nostra via, tutti consigliati dagli italiani. Rientro presto: domani è la giornata lunga. Kazimierz lo teniamo intero per venerdì.","Libero"],
+  tip:"Se dopo la sveglia alle tre siamo a pezzi, si tagliano Santa Maria o le vetrate e si tengono museo e riposo. Per cena a domicilio: Glovo con l'account italiano, al fattorino il codice del portone."},
+
+{ id:"24", wd:"Giovedì", n:"24", city:"Auschwitz-Birkenau", cls:"", title:"La giornata della memoria",
+  mood:"Sveglia alle 8:30, fuori alle 9:45, colazione salata da Milkbar Tomasza. Unica giornata piena: si cammina molto e si parla poco.",
+  ev:[
+   ["10:15","","free","A piedi alla stazione dei bus","Dodici minuti da casa: la stazione MDA è dietro quella dei treni, in via Bosacka. Piattaforma D10. Documenti in tasca: i biglietti del museo sono nominativi e li controllano all'ingresso.","A piedi"],
+   ["10:40","12:05","ok","Bus per Auschwitz","Autobus di linea Lajkonik, un'ora e venticinque verso ovest. Biglietto nel link dell'email, si mostra all'autista. Si scende davanti al museo, in via Więźniów Oświęcimia.","Prenotato"],
+   ["12:05","13:00","cash","Controlli, caffè, libreria","Un'ora al centro visitatori: è l'unico posto della giornata con bar e libreria, a Birkenau ci sono solo i bagni. Controllo come in aeroporto, <b>borsa massimo 35×25×15 cm</b>, la misurano: una sola borsa piccola per tutti e due, lo zaino grande resta a casa. Si ritirano le cuffie del tour.","Sul posto"],
+   ["13:00","16:45","ok","Tour guidato, Auschwitz I e Birkenau","Tre ore e tre quarti con un educatore del museo, in inglese, con le cuffie. Prima Auschwitz I, la caserma polacca trasformata in campo nel 1940: il cancello «Arbeit macht frei», i blocchi con le vetrine di valigie, scarpe e capelli, il Blocco 11 col muro delle fucilazioni, il primo crematorio. Poi la navetta per Birkenau, a tre chilometri: la porta con la ferrovia, la rampa dove si faceva la selezione, le baracche, le rovine dei crematori fatti saltare dai nazisti nel gennaio 1945. Qui morì oltre un milione di persone, quasi tutte ebree.","Prenotato"],
+   ["17:20","18:15","ok","Rientro libero nei campi","Facoltativo: un pass gratuito per tornare dove vogliamo, senza gruppo e senza cuffie. Se siamo stanchi si salta e si prende il bus delle 17:30.","Pass gratuito"],
+   ["18:30","19:55","ok","Bus di ritorno a Cracovia","<b>È l'ultima corsa del giorno.</b> Alla fermata davanti al centro visitatori di Auschwitz I per le 18:20; se siamo a Birkenau, la navetta si prende entro le 17:50.","Prenotato"],
+   ["20:10","","free","Hamburger e a letto","Dodici minuti a piedi dalla stazione. Niente in programma: la giornata pesa anche dentro, si mangia qualcosa di veloce e si va a dormire.","Libero"]
+  ],
+  tip:"Acqua e uno spuntino nello zainetto: dentro i campi si evita di mangiare, la pausa buona è fra il tour e il pass. Scarpe comode, a Birkenau si cammina su ghiaia per chilometri. Giacca: è tutto all'aperto."},
+
+{ id:"25", wd:"Venerdì", n:"25", city:"Wieliczka e Podgórze", cls:"", title:"Sotto terra e sull'altra riva",
+  mood:"Sveglia alle 7:15, fuori alle 8:30, colazione al volo da Milkbar Tomasza. La miniera di sale la mattina, il vecchio ghetto il pomeriggio, la musica klezmer la sera.",
+  ev:[
+   ["09:08","09:31","ok","Treno per Wieliczka","Dalla stazione centrale, linea locale, 23 minuti. Biglietto PDF sul telefono. Dalla stazione di Wieliczka dieci minuti a piedi in salita fino al pozzo Daniłowicz, seguendo i cartelli «Kopalnia Soli».","Prenotato"],
+   ["10:15","12:30","ok","Miniera di sale, percorso turistico in italiano","Si scava sale qui dal Duecento: settecento anni di gallerie, 300 chilometri in tutto, patrimonio UNESCO dal 1978. Il percorso turistico scende a 135 metri: 800 scalini quasi tutti in discesa, tre chilometri di camere, laghi salati e sculture di sale. Il pezzo forte è la cappella di santa Kinga, una chiesa intera scavata nel sale dai minatori, coi lampadari di cristalli di sale. La leggenda: Kinga, principessa ungherese, gettò il suo anello in una miniera d'Ungheria e lo ritrovò nel primo blocco di sale estratto a Wieliczka. Sotto ci sono 14 gradi fissi: <b>felpa</b>. Zainetto piccolo, si risale in ascensore.","Prenotato"],
+   ["dopo","","free","Torre di Gradazione","Inclusa nel biglietto, nel parco accanto: una torre di rami di legno su cui scorre acqua salata, si respira l'aria salina come in una stazione termale. Venti minuti, vista sul paese.","A scelta"],
+   ["13:00","13:40","cash","Treno di ritorno","Ogni mezz'ora, 23 minuti, biglietto alla macchinetta con la carta. Pranzo a Wieliczka prima del treno o a Kazimierz dopo.","Si paga lì"],
+   ["15:30","17:30","cash","Passeggiata del ghetto di Podgórze","Da Kazimierz si attraversa la Vistola sul ponte Bernatek, con le figure acrobatiche sospese ai cavi. Podgórze è dove i nazisti chiusero nel 1941 i 15.000 ebrei di Cracovia; il ghetto fu liquidato nel marzo 1943. Nell'ordine: la Farmacia sotto l'Aquila, l'unica farmacia dentro il ghetto, del polacco Tadeusz Pankiewicz che aiutò chi poteva (22 zł, entrare entro le 16:15); piazza degli Eroi del Ghetto, con 70 sedie di ferro vuote a ricordare i mobili abbandonati durante le deportazioni; i due tratti superstiti del muro, costruito a forma di lapidi; la Fabbrica di Schindler vista da fuori, in via Lipowa 4.","Si paga lì"],
+      ["17:30","","free","Kazimierz","Dal ghetto si torna sul ponte Bernatek e si è nel quartiere ebraico: per secoli città a sé, con sette sinagoghe intorno a via Szeroka; svuotato dai nazisti, abbandonato per cinquant'anni, oggi il quartiere dei locali e dei cortili. Plac Nowy con la zapiekanka, la baguette calda da 30 cm col formaggio, come merenda; poi Szeroka con le sinagoghe viste da fuori.","Libero"],
+   ["19:30","","free","Cena, magari con la musica klezmer","Il klezmer è la musica delle feste ebraiche dell'Europa orientale: clarinetto, violino e fisarmonica, allegra e malinconica insieme. Nei ristoranti di via Szeroka si suona dal vivo ogni sera alle 20: Awiw al 13 (concerto gratis, si lascia qualcosa ai musicisti), Klezmer Hois al 6 (la vecchia austeria del Quattrocento, 40-50 zł a testa in più), Ariel al 18. Se ne abbiamo voglia si va lì per le 19:30 e si sceglie guardando la sala; altrimenti si cena dove capita.","Libero"],
+  tip:"Il tour della miniera dura fino a tre ore con una pausa a metà, con bar e bagni. Se si esce tardi, il ghetto si accorcia: piazza e muri si vedono anche alle 18."},
+
+{ id:"26", wd:"Sabato", n:"26", city:"Wawel", cls:"", title:"Il colle dei re",
+  mood:"Sveglia alle 9:15, colazione da Milkbar Tomasza o da Charlotte alle 10:30. Cattedrale, castello e tesori con la guida in italiano; pomeriggio libero sul fiume, cena d'addio.",
+  ev:[
+      ["09:30","","free","Colazione lenta e Rynek","Nessun orario prima delle 11: colazione da Karmello in Floriańska (caffè buono e cornetto) o da Charlotte a plac Szczepański, poi a piedi al colle lungo Grodzka.","Libero"],
+   ["11:15","12:15","cash","Cattedrale del Wawel","Sul colle sopra la Vistola, a quindici minuti da casa. Qui si incoronavano e si seppellivano i re di Polonia: nelle cripte ci sono i sovrani, i poeti nazionali e il maresciallo Piłsudski. Si sale alla campana di Sigismondo, del 1520, 11 tonnellate, suonata solo nei giorni grandi. La cappella di Sigismondo, con la cupola dorata, è opera di un architetto fiorentino. Biglietto 26 zł alla cassa nel cortile, con la carta.","Si paga lì"],
+   ["12:15","12:45","free","Spuntino sul colle","Bar nel cortile o un obwarzanek: il tour dura quasi due ore, meglio non arrivarci a digiuno.","Libero"],
+   ["12:50","14:50","ok","«Wawel: i Tesori più preziosi», guida in italiano","Ritrovo alle 12:50 all'ingresso dei Sotterranei, la mostra «Wawel Scomparso». Il castello dei Jagelloni, ricostruito in stile rinascimentale da architetti italiani per il re Sigismondo I e la moglie Bona Sforza, milanese: i saloni con gli arazzi fiamminghi, il soffitto con le teste di legno scolpite, il Tesoro della Corona con la Szczerbiec, la spada delle incoronazioni, e l'Armeria. Scale e passaggi stretti. I Giardini Reali sono inclusi e si vedono dopo, con calma.","Prenotato"],
+   ["dalle 15","","free","Tana del Drago e lungofiume","Dal colle si scende nella grotta del drago (15 zł) e si esce sul fiume accanto alla statua di bronzo che sputa fuoco ogni pochi minuti. Poi lungofiume fino al Forum Przestrzenie, il bar sulla riva con la vista sul castello: aperitivo al tramonto, verso le 18:45.","Libero"],
+   ["sera","","free","Cena d'addio a Cracovia","Pod Wawelem, ai piedi del castello, con le porzioni enormi e la birra, oppure in centro. Si prenota nel pomeriggio. Trolley da preparare prima di uscire.","Libero"]
+  ],
+  tip:"Se piove: Rynek Underground, il museo sotto la piazza con gli scavi medievali, oppure il Museo delle torture in centro."},
+
+{ id:"27", wd:"Domenica", n:"27", city:"Cracovia → Budapest", cls:"mix", title:"Si cambia fiume",
+  mood:"Sveglia alle 9:15, alle 10:30 fuori di casa coi trolley, colazione da Milkbar Tomasza, poi dritti in stazione. Volo del primo pomeriggio, sera sul Danubio.",
+  ev:[
+   ["09:15","","free","Sveglia e trolley chiusi","Controllo di documenti, caricabatterie e biglietti di Budapest sul telefono.","Casa"],
+   ["10:30","","free","Fuori di casa coi trolley","Chiavi come dice Jerzy. Non si torna più: colazione da Milkbar Tomasza con i trolley accanto al tavolo, ultimo giro sul Rynek se avanza tempo. Gli złoty avanzati si spendono qui: a Budapest servono i fiorini.","Casa"],
+   ["11:30","","cash","A piedi coi trolley alla stazione","Dodici minuti. Treno per l'aeroporto alle 12:06 (o 11:36 se siamo pronti), 20 zł a testa. Il gate chiude alle 14:05: due ore di margine.","Si paga lì"],
+   ["14:35","15:45","ok","Volo Cracovia → Budapest","Ryanair, un'ora e dieci, trolley inclusi.","Prenotato"],
+   ["16:00","","ok","Taxi privato dall'aeroporto","Incluso nella prenotazione della casa: ci aspetta all'uscita. Mezz'ora fino in centro.","Incluso"],
+   ["16:45","","ok","Check-in al Collect Residence","Szív utca 46, nel quartiere dei viali intorno ad Andrássy út, a due passi dalla metro gialla, la più vecchia del continente (1896). Camera Deluxe da 40 metri con balcone, tre notti. Cauzione di 80 € sulla carta, restituita alla partenza.","Prenotato"],
+   ["18:30","","free","Prima passeggiata: Ponte delle Catene e Parlamento illuminato","Si compra la travelcard da 72 ore per i mezzi e si va al fiume. Il Ponte delle Catene, del 1849, fu il primo ponte stabile fra Buda e Pest; dalla riva di Buda si vede il Parlamento illuminato sull'altra sponda. Cena in zona.","Libero"]
+  ],
+  tip:"A Budapest si paga con la carta scegliendo sempre i fiorini, mai la conversione in euro. Per fare i conti a mente: 1 € vale circa 400 fiorini."},
+
+{ id:"28", wd:"Lunedì", n:"28", city:"Pest", cls:"bud", title:"Il Parlamento e il Danubio di notte",
+  mood:"Due appuntamenti fissi: il tour del Parlamento alle 14 e la crociera alle 19:20. Le voci viola sono idee da decidere insieme.",
+  ev:[
+   ["09:00","","free","Colazione","Al caffè accanto a casa, che fa lo sconto agli ospiti, oppure lungo Andrássy út, il viale dei palazzi eleganti che porta al centro.","Libero"],
+   ["10:00","11:30","prop","Basilica di Santo Stefano e terrazza panoramica","Proposta. La chiesa più grande di Budapest, alta 96 metri come la cupola del Parlamento: per legge nessun edificio della città li supera. Dentro, in una teca, la mano destra mummificata di santo Stefano, il primo re d'Ungheria. Si sale sulla terrazza della cupola, a piedi o in ascensore, per la vista su tutta la città. Biglietto in cassa.","Proposta"],
+   ["11:30","12:30","prop","Lungofiume: le Scarpe sul Danubio","Proposta. Sulla riva davanti al Parlamento, sessanta paia di scarpe di ferro: ricordano gli ebrei fucilati sul fiume dai fascisti ungheresi nell'inverno 1944-45, costretti a togliersi le scarpe prima. Poi piazza della Libertà, con il palazzo dell'ambasciata americana e il monumento sovietico.","Proposta"],
+   ["12:30","13:40","free","Pranzo vicino al Parlamento","Poi quindici minuti a piedi lungo il fiume, verso nord, fino al punto di ritrovo.","Libero"],
+   ["14:00","16:30","ok","Parlamento, tour guidato","Il palazzo neogotico sul fiume, finito nel 1904, 691 stanze, il più grande d'Ungheria. Ritrovo alle 14 in Jászai Mari tér, alla statua di Imre Nagy, con la guida che tiene una bandiera verde acqua. Prima la passeggiata esterna con la guida, che parla spagnolo, poi dentro con l'audioguida: lo scalone d'onore, la cupola con la Sacra Corona d'Ungheria e la sala dell'assemblea. <b>Documenti con noi</b>: carta d'identità e passaporto, la guida ritira i biglietti in cassa coi nostri nomi.","Prenotato"],
+   ["16:45","18:45","prop","Quartiere ebraico e Szimpla Kert","Proposta. Metro fino a Deák, poi dieci minuti a piedi. La Grande Sinagoga di via Dohány è la più grande d'Europa, in stile moresco con le due torri a cipolla; dietro, il cortile con l'albero della vita coi nomi delle vittime. Kazinczy utca è la via dei murales e dei locali. Szimpla Kert è il primo ruin bar della città, aperto nel 2002 in un palazzo abbandonato: cortili, mobili spaiati, una Trabant in mezzo. Aperitivo lì, poi quindici minuti a piedi fino al molo.","Proposta"],
+   ["19:20","20:20","ok","Crociera sul Danubio con drink","Al molo 7 di Jane Haining rakpart, sul lungofiume di Pest, per le 19:05. Un'ora di navigazione con una bibita inclusa e audioguida in italiano: si passa sotto i ponti e davanti al Parlamento, al Castello di Buda e al Bastione dei Pescatori, tutti illuminati. Il ponte della barca è chiuso e riscaldato: si parte anche con la pioggia.","Prenotato"]
+  ],
+  tip:"Il tramonto è alle 18:28: alla partenza della crociera è già buio, ed è quello che vogliamo. Le voci viola si tengono, si spostano o si buttano insieme."},
+
+{ id:"29", wd:"Martedì", n:"29", city:"Buda", cls:"bud", title:"Buda e i maialini",
+  mood:"La collina del castello la mattina, mezz'ora coi maialini nani il pomeriggio. Giornata leggera apposta.",
+  ev:[
+   ["09:00","","cash","Chiesa di Mattia","Metro gialla fino a Vörösmarty tér, il Ponte delle Catene a piedi, poi il bus 16 o la funicolare del 1870 su per la collina. La chiesa del Castello, dove si incoronarono Francesco Giuseppe e Sissi nel 1867: il tetto di tegole colorate della manifattura Zsolnay e l'interno tutto dipinto, con motivi orientali. Biglietto in cassa.","Si paga lì"],
+   ["dopo","","prop","Bastione dei Pescatori e Castello","Proposta. Il Bastione è la terrazza di pietra bianca accanto alla chiesa, con sette torri per le sette tribù magiare che fondarono il paese: da qui la vista più bella sul Parlamento e sul fiume, in gran parte gratis. Poi la passeggiata fra le case barocche del quartiere del Castello fino al palazzo reale.","Proposta"],
+   ["13:00","","free","Pranzo con calma","Sulla collina o tornando a Pest.","Libero"],
+   ["15:40","16:10","todo","MiniPig Cafe, stanza VIP Heaven","In Paulay Ede utca 2, vicino alla fermata Deák. Al piano di sopra vivono una decina di maialini nani; la stanza VIP è riservata, mezz'ora in cui girano liberi intorno a noi. Regole della casa: ciabatte e disinfettante all'ingresso, non si prendono in braccio, si arriva dieci minuti prima perché con cinque minuti di ritardo si perde il turno. Poi caffè al piano di sotto.","Da prenotare"],
+   ["16:30","19:00","prop","Pomeriggio libero","Proposta. Andrássy út fino in fondo, piazza degli Eroi con le statue dei re d'Ungheria e, nel parco dietro, il castello Vajdahunyad, una copia di castelli transilvani costruita per l'esposizione del 1896. Oppure riposo a casa, che è a due fermate.","Proposta"],
+   ["20:15","","prop","Cena peruviana da Inka Grill","Proposta. Ceviche e lomo saltado in Ráday utca, la via dei ristoranti. Si prenota per telefono.","Proposta"]
+  ],
+  tip:"Le terme le abbiamo lasciate fuori per scelta. Il MiniPig ha una regola sola: si arriva alle 15:30."},
+
+{ id:"30", wd:"Mercoledì", n:"30", city:"Budapest → Napoli", cls:"bud", title:"Il mercato e il ritorno",
+  mood:"Paprika e lángos al Mercato Centrale, poi il bus per l'aeroporto.",
+  ev:[
+   ["08:30","","free","Check-out","Bagagli con noi, cauzione restituita sulla carta.","Casa"],
+   ["09:00","10:30","free","Mercato Centrale","Metro fino a Kálvin tér. La grande hall di ferro e vetro del 1897, col tetto di tegole Zsolnay: al piano terra paprika in polvere e in treccia, salami, foie gras, tokaji; al piano di sopra i banchi di cibo, dove si mangia in piedi il lángos, la focaccia fritta con panna acida e formaggio. I regali si comprano qui.","Libero"],
+   ["10:45","11:25","cash","Bus 100E per l'aeroporto","Parte da Kálvin tér, a cinque minuti dal mercato. Si paga con la carta a bordo; la travelcard non vale su questo bus. Quaranta minuti.","Si paga lì"],
+   ["13:30","15:10","ok","Volo Budapest → Napoli","Ryanair, trolley inclusi. A casa per cena.","Prenotato"]
+  ],
+  tip:"I fiorini avanzati si spendono al mercato: fuori dall'Ungheria non li cambia nessuno a un tasso decente."}
+];
+
+const grid = document.getElementById('weekgrid');
+const week = document.getElementById('week');
+const day = document.getElementById('day');
+
+grid.innerHTML = DAYS.map(d => `
+  <section class="dayc ${d.cls}">
+    <button class="head" type="button" data-id="${d.id}" title="Apri la giornata">
+      <div class="num">${d.n}</div>
+      <div><div class="wd">${d.wd}</div><div class="city">${d.city}</div></div>
+    </button>
+    <h3>${d.title}</h3>
+    <p class="mood">${d.mood}</p>
+    <ul class="cl">${d.ev.map(e=>`
+      <li class="${e[2]}"><div class="t">${e[0]}${e[1]?' → '+e[1]:''}</div><div class="w">${e[3]}</div><div class="n">${e[4]}</div><span class="chip">${e[5]}</span></li>`).join('')}
+    </ul>
+    <div class="tipc">${d.tip}</div>
+  </section>`).join('');
+
+function chipClass(s){ return s; }
+function renderDay(id){
+  const i = DAYS.findIndex(d=>d.id===id); if(i<0) return showWeek();
+  const d = DAYS[i], prev = DAYS[i-1], next = DAYS[i+1];
+  const col = d.cls==='bud' ? 'var(--bud)' : d.cls==='mix' ? 'var(--gold)' : 'var(--krk)';
+  day.innerHTML = `
+    <div class="daynav">
+      <button class="btn" type="button" data-go="week">← Settimana</button>
+      <div style="display:flex;gap:8px">
+        <button class="btn" type="button" ${prev?`data-go="${prev.id}"`:'disabled'}>‹ ${prev?prev.wd.slice(0,3)+' '+prev.n:''}</button>
+        <button class="btn" type="button" ${next?`data-go="${next.id}"`:'disabled'}>${next?next.wd.slice(0,3)+' '+next.n:''} ›</button>
+      </div>
+    </div>
+    <div class="dayhead">
+      <div class="num"><small>${d.wd} settembre</small>${d.n}</div>
+      <div><div class="city" style="color:${col}">${d.city}</div><h2>${d.title}</h2><div class="mood">${d.mood}</div></div>
+    </div>
+    <ul class="tl">${d.ev.map(e=>`
+      <li class="ev ${e[2]}">
+        <div class="t">${e[0]}${e[1]?`<small>→ ${e[1]}</small>`:''}</div>
+        <div class="box"><div class="w">${e[3]}</div><div class="n">${e[4]}</div><span class="chip">${e[5]}</span></div>
+      </li>`).join('')}
+    </ul>
+    <div class="tip"><span class="eyebrow">Da tenere a mente</span>${d.tip}</div>
+    <div class="pager">
+      <button class="btn" type="button" ${prev?`data-go="${prev.id}"`:'disabled'}>‹ ${prev?prev.wd+' '+prev.n:'Inizio'}</button>
+      <button class="btn gold" type="button" ${next?`data-go="${next.id}"`:'data-go="week"'}>${next?next.wd+' '+next.n+' ›':'Torna alla settimana'}</button>
+    </div>`;
+  week.classList.add('off'); day.classList.add('on'); sw('day');
+  window.scrollTo({top:0,behavior:'instant'});
+}
+function showWeek(){ week.classList.remove('off'); day.classList.remove('on'); sw('week'); }
+function sw(m){ document.getElementById('swWeek').classList.toggle('on',m==='week'); document.getElementById('swDay').classList.toggle('on',m==='day'); }
+function go(id){ if(id==='day'){ id = location.hash.startsWith('#g') ? location.hash.slice(2) : DAYS[0].id; }
+  if(id==='week'){ history.replaceState(null,'','#'); showWeek(); } else { history.replaceState(null,'','#g'+id); renderDay(id); } }
+
+document.addEventListener('click', e => {
+  const c = e.target.closest('[data-id]'); if(c){ go(c.dataset.id); return; }
+  const b = e.target.closest('[data-go]'); if(b && !b.disabled){ go(b.dataset.go); }
+});
+document.addEventListener('keydown', e => {
+  if(!day.classList.contains('on')) return;
+  const cur = location.hash.replace('#g',''); const i = DAYS.findIndex(d=>d.id===cur);
+  if(e.key==='ArrowRight' && DAYS[i+1]) go(DAYS[i+1].id);
+  if(e.key==='ArrowLeft' && DAYS[i-1]) go(DAYS[i-1].id);
+  if(e.key==='Escape') go('week');
+});
+window.addEventListener('hashchange', () => { const h=location.hash.replace('#g',''); h?renderDay(h):showWeek(); });
+(function(){ const h=location.hash.replace('#g',''); if(h) renderDay(h); })();
+</script>

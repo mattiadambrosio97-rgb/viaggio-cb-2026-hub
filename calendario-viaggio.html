@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendario viaggio: Cracovia e Budapest, 23-30 settembre 2026</title>
+<style>
+  :root{
+    --bg:#f4f1ea; --card:#ffffff; --ink:#1f1d1a; --muted:#6b665d; --line:#e4dfd3;
+    --ok:#1f7a4d; --ok-bg:#e3f3ea; --todo:#a35d00; --todo-bg:#fff0d6; --open:#5b5650; --open-bg:#efece5;
+    --risk:#a12626; --risk-bg:#fbe3e3; --info:#2d5b9a; --info-bg:#e3ecf8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:20px 16px 32px}
+  header{max-width:1400px;margin:0 auto 14px}
+  h1{font-size:22px;margin:0 0 4px;font-weight:700;letter-spacing:-.2px}
+  .sub{color:var(--muted);font-size:14px;margin:0 0 10px}
+  .legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:13px;color:var(--muted);margin-bottom:6px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .dot.ok{background:var(--ok)} .dot.todo{background:var(--todo)} .dot.open{background:#b9b3a6} .dot.risk{background:var(--risk)} .dot.info{background:var(--info)}
+  .totals{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;margin:10px 0 0;padding:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+  .totals b{font-weight:700}
+  .board{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 14px;scroll-snap-type:x proximity}
+  .day{flex:0 0 300px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;scroll-snap-align:start;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+  .day h2{margin:0;font-size:16px;font-weight:700}
+  .day .city{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin:2px 0 10px}
+  .day .city.bud{color:#2d5b9a}
+  .slot{border-left:4px solid #b9b3a6;background:var(--open-bg);border-radius:8px;padding:8px 10px;margin:0 0 8px}
+  .slot .t{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .slot .w{font-weight:600;margin:1px 0 2px}
+  .slot .n{font-size:12.5px;color:var(--muted)}
+  .slot .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.3px;padding:1px 7px;border-radius:999px;margin-top:5px}
+  .ok{border-left-color:var(--ok);background:var(--ok-bg)} .ok .tag{background:var(--ok);color:#fff}
+  .todo{border-left-color:var(--todo);background:var(--todo-bg)} .todo .tag{background:var(--todo);color:#fff}
+  .risk{border-left-color:var(--risk);background:var(--risk-bg)} .risk .tag{background:var(--risk);color:#fff}
+  .info{border-left-color:var(--info);background:var(--info-bg)} .info .tag{background:var(--info);color:#fff}
+  .open .tag{background:#b9b3a6;color:#fff}
+  .foot{max-width:1400px;margin:8px auto 0;font-size:12.5px;color:var(--muted)}
+  @media (max-width:700px){ .day{flex-basis:86vw} }
+  @media print{ body{background:#fff} .board{flex-wrap:wrap;overflow:visible} .day{flex:1 1 300px;box-shadow:none} }
+</style>
+</head>
+<body>
+<header>
+  <h1>Cracovia 23-27 e Budapest 27-30 settembre 2026</h1>
+  <p class="sub">Aggiornato il 14/09/2026 sera. Le card scorrono in orizzontale; ogni riga è uno slot della giornata col suo stato.</p>
+  <div class="legend">
+    <span><i class="dot ok"></i> pagato o prenotato</span>
+    <span><i class="dot todo"></i> da comprare o da fissare</span>
+    <span><i class="dot risk"></i> a rischio o tentativo</span>
+    <span><i class="dot info"></i> logistica confermata, si paga sul posto</span>
+    <span><i class="dot open"></i> libero, senza biglietto</span>
+  </div>
+  <div class="totals">
+    <span>Pagato: <b>768,29 €</b> (voli 328,90 · Auschwitz 70 · prima rata Airbnb 116,48 · Wieliczka 76,98 · bus Lajkonik 20,87 · Wawel Tesori 71,58 · Czartoryski 30,02 · treno Wieliczka 3,46 · crociera Danube Legend 50)</span>
+    <span>Prenotato, da addebitare: <b>618,96 €</b> (Airbnb 232,96 · Collect 386)</span>
+    <span>Totale stimato del viaggio: <b>~2.300 €</b> (~2.390 con il tour Schindler)</span>
+  </div>
+</header>
+
+<div class="board">
+
+  <section class="day">
+    <h2>Mercoledì 23</h2>
+    <div class="city">Napoli → Cracovia</div>
+    <div class="slot ok"><div class="t">06:20 → 08:25</div><div class="w">Volo NAP → KRK, FR4045</div><div class="n">Trolley 10 kg inclusi</div><span class="tag">PAGATO 160 €</span></div>
+    <div class="slot info"><div class="t">08:47 → 09:04</div><div class="w">Treno aeroporto → Kraków Główny</div><div class="n">20 zł a testa, a bordo o alla macchinetta</div><span class="tag">SUL POSTO</span></div>
+    <div class="slot ok"><div class="t">09:30</div><div class="w">Trolley nel deposito del palazzo, via Szpitalna 20/22</div><div class="n">Codici in itinerario; check-in dalle 16, chiavi dalle 11 se pulizie in corso</div><span class="tag">AIRBNB JERZY 349,44 €</span></div>
+    <div class="slot open"><div class="t">10:00</div><div class="w">Rynek, hejnał, Sukiennice, caffè</div><span class="tag">LIBERO</span></div>
+    <div class="slot open"><div class="t">11:00</div><div class="w">Vetrate di San Francesco</div><div class="n">Gratis, 20 min</div><span class="tag">LIBERO</span></div>
+    <div class="slot info"><div class="t">11:50</div><div class="w">Santa Maria, l'altare di Veit Stoss</div><div class="n">20 zł a testa alla cassa di Plac Mariacki 7, ingresso lato sud; lun-sab 11:30-18, altare dalle 11:50. Ricontrollare chiusure straordinarie il 21/9</div><span class="tag">SUL POSTO</span></div>
+    <div class="slot ok"><div class="t">13:50 → ~15:20</div><div class="w">Museo Czartoryski, la Dama con l'ermellino</div><div class="n">Biglietti PDF nell'email del museo (prenotazione #2563774); Pijarska 15, 5 min da casa; il biglietto vale 3 mesi anche per Museo Wyspiański, Casa Szołayski, Arsenale</div><span class="tag">PAGATO 130 zł</span></div>
+    <div class="slot open"><div class="t">sera</div><div class="w">Kazimierz, primo giro e cena</div><span class="tag">LIBERO</span></div>
+  </section>
+
+  <section class="day">
+    <h2>Giovedì 24</h2>
+    <div class="city">Auschwitz-Birkenau</div>
+    <div class="slot ok"><div class="t">10:40 → 12:05</div><div class="w">Bus Lajkonik da MDA, piattaforma D10</div><div class="n">A piedi da casa ~10:15; biglietto via email da bilet@moj-bus.pl</div><span class="tag">PAGATO 47,50 zł</span></div>
+    <div class="slot ok"><div class="t">13:00 → 16:45</div><div class="w">Tour guidato in inglese, Auschwitz I + Birkenau</div><div class="n">Borse max 35×25×15; 55 min di margine all'arrivo</div><span class="tag">PAGATO 70 €</span></div>
+    <div class="slot ok"><div class="t">17:20 → ~18:15</div><div class="w">Rientro libero col pass gratuito</div><div class="n">Circa un'ora: la corsa delle 19:45 non era in vendita. Facoltativo: se cotti si salta e si prende il 17:30</div><span class="tag">PASS GRATUITO</span></div>
+    <div class="slot ok"><div class="t">18:30 → 19:55</div><div class="w">Bus Lajkonik ritorno a MDA</div><div class="n">Ultima corsa del giorno; essere al centro visitatori di Auschwitz I per le 18:20</div><span class="tag">PAGATO 42,50 zł</span></div>
+  </section>
+
+  <section class="day">
+    <h2>Venerdì 25</h2>
+    <div class="city">Wieliczka + pomeriggio</div>
+    <div class="slot ok"><div class="t">09:08 → 09:31</div><div class="w">Treno KMŁ 33214 Główny → Wieliczka Rynek-Kopalnia</div><div class="n">PDF Koleo nell'email (si mostra dal telefono); ritorno alla macchinetta a Wieliczka; 10 min a piedi al pozzo Daniłowicz, dentro per le 9:45</div><span class="tag">PAGATO</span></div>
+    <div class="slot ok"><div class="t">10:15 → ~12:15</div><div class="w">Miniera di sale, Percorso Turistico in italiano</div><div class="n">2 interi con Torre di Gradazione (332 zł); col biglietto anche il Museo sotterraneo (+1 h). Felpa, scarpe comode, zainetto entro 20×20×35</div><span class="tag">PAGATO 76,98 €</span></div>
+    <div class="slot open"><div class="t">dopo</div><div class="w">Torre di Gradazione nel parco (inclusa) oppure rientro</div><span class="tag">A SCELTA</span></div>
+    <div class="slot info"><div class="t">~12:30-13:30</div><div class="w">Treno di ritorno Wieliczka → Główny</div><div class="n">Biglietto alla macchinetta in stazione (carta) o su koleo.pl dal telefono; ogni mezz'ora, ~7-10 zł a testa</div><span class="tag">SUL POSTO</span></div>
+    <div class="slot info"><div class="t">15:30 → 17:30</div><div class="w">Passeggiata del ghetto a Podgórze</div><div class="n">Da Kazimierz per il ponte Bernatek; Farmacia sotto l'Aquila (22 zł a testa alla cassa, mer-dom 9-17: entrare entro le 16:15); piazza degli Eroi del Ghetto (le 70 sedie); tratti del muro in via Lwowska e Limanowskiego; Fabbrica di Schindler dall'esterno, Lipowa 4</div><span class="tag">SUL POSTO</span></div>
+    <div class="slot open"><div class="t">dopo</div><div class="w">A scelta: Museo dell'Ingegneria e della Tecnica (św. Wawrzyńca 15, mar-dom 10-18, ultimo ingresso 17, 35 zł) oppure Kazimierz con calma</div><div class="n">Zoo, MuFo e Underground saltati (decisione del 14/09)</div><span class="tag">A SCELTA</span></div>
+    <div class="slot open"><div class="t">sera</div><div class="w">Cena a Kazimierz, possibilmente con concerto klezmer (si prenota il tavolo)</div><span class="tag">LIBERO</span></div>
+  </section>
+
+  <section class="day">
+    <h2>Sabato 26</h2>
+    <div class="city">Schindler e Wawel</div>
+    <div class="slot risk"><div class="t">09:00 → 10:30</div><div class="w">Fabbrica di Schindler, tour con guida (Krakow4you via GetYourGuide)</div><div class="n">44,64 € a testa, biglietto incluso, gruppo max 14, inglese; cancellazione gratuita fino al 25/9, «prenota ora paga dopo». Ritrovo Lipowa 4</div><span class="tag">DA DECIDERE</span></div>
+    <div class="slot info"><div class="t">11:15 → 12:30</div><div class="w">Cattedrale del Wawel</div><div class="n">26 zł a testa alla cassa nel cortile (Wawel 3), con la carta; sabato 9-16. Poi alle 12:50 al ritrovo dei Tesori</div><span class="tag">ALLA CASSA</span></div>
+    <div class="slot ok"><div class="t">13:00 → 14:50</div><div class="w">«Wawel: I Tesori Più Preziosi», tour guidato in italiano</div><div class="n">Ritrovo alle 12:50 alla mostra «Wawel Scomparso» (ingresso dei Sotterranei). Castello piani I e II, Sotterranei, Tesoro della Corona, Armeria, Giardini Reali. Scale e passaggi stretti</div><span class="tag">PAGATO 310 zł</span></div>
+    <div class="slot open"><div class="t">dalle 15</div><div class="w">Libero: Vistola e aperitivo al Forum Przestrzenie sotto il Wawel, Kazimierz, Tana del Drago; Museo dell'Ingegneria se non fatto venerdì</div><div class="n">Riserve per la pioggia (tutti i giorni): Rynek Underground, Museo delle torture in centro (~30 zł, 30-45 min)</div><span class="tag">LIBERO</span></div>
+    <div class="slot open"><div class="t">sera</div><div class="w">Cena d'addio a Cracovia</div><span class="tag">LIBERO</span></div>
+  </section>
+
+  <section class="day">
+    <h2>Domenica 27</h2>
+    <div class="city">Cracovia → Budapest</div>
+    <div class="slot open"><div class="t">09:30</div><div class="w">Planty e caffè in Rynek</div><span class="tag">LIBERO</span></div>
+    <div class="slot info"><div class="t">entro 11:00</div><div class="w">Check-out, a piedi in stazione coi trolley (12 min)</div><span class="tag">LOGISTICA</span></div>
+    <div class="slot info"><div class="t">12:06 → 12:23</div><div class="w">Treno Główny → aeroporto (riserva 12:36)</div><div class="n">20 zł a testa</div><span class="tag">SUL POSTO</span></div>
+    <div class="slot ok"><div class="t">14:35 → 15:45</div><div class="w">Volo KRK → BUD, FR9751</div><span class="tag">PAGATO 78,30 €</span></div>
+    <div class="slot ok"><div class="t">16:00</div><div class="w">Taxi privato incluso, aeroporto → Collect Residence</div><div class="n">Modalità chieste alla struttura (risposta nella chat Booking). Riserva: Bolt 25-36 € o 100E + M1</div><span class="tag">INCLUSO</span></div>
+    <div class="slot ok"><div class="t">16:45</div><div class="w">Check-in Collect Residence, Szív utca 46</div><div class="n">Deluxe 40 m² con balcone, cauzione 80 € (chiedere su carta); flessibile fino al 24/9</div><span class="tag">PRENOTATO 386 €</span></div>
+    <div class="slot open"><div class="t">18:30</div><div class="w">Basilica dall'esterno, Ponte delle Catene, Parlamento illuminato</div><div class="n">Travelcard 72 h attivata qui: 5.750 Ft a testa</div><span class="tag">LIBERO</span></div>
+  </section>
+
+  <section class="day">
+    <h2>Lunedì 28</h2>
+    <div class="city bud">Pest</div>
+    <div class="slot open"><div class="t">09:00</div><div class="w">Colazione al caffè accanto (15 % di sconto) o lungo Andrássy</div><span class="tag">LIBERO</span></div>
+    <div class="slot info"><div class="t">10:00 → 11:30</div><div class="w">Basilica di Santo Stefano, chiesa e terrazza</div><div class="n">M1 fino a Bajcsy-Zsilinszky. Combinato ~6.800 Ft a testa, in cassa</div><span class="tag">SUL POSTO</span></div>
+    <div class="slot open"><div class="t">11:30 → 12:30</div><div class="w">Lungofiume: Piazza della Libertà, Scarpe sul Danubio, esterno del Parlamento</div><span class="tag">LIBERO</span></div>
+    <div class="slot open"><div class="t">12:30 → 13:40</div><div class="w">Pranzo in zona Kossuth tér, poi 15 min a piedi lungo il fiume fino a Jászai Mari tér</div><span class="tag">LIBERO</span></div>
+    <div class="slot ok"><div class="t">14:00 → 16:30</div><div class="w">Parlamento: tour guidato in spagnolo (Paseando por Europa), 135 min</div><div class="n">Ritrovo 14:00 a Jászai Mari tér, statua di Imre Nagy, bandiera verde acqua. Documenti alla guida (carta d'identità Mattia, passaporto Michelle). Due prenotazioni GetYourGuide: UE 35 € (GYGG45KBH653) e non UE 54 € (GYG7VKMX6AA5); addebito il 25/9, cancellabile fino al 27/9</div><span class="tag">RISERVATO 89 €</span></div>
+    <div class="slot open"><div class="t">16:45 → 18:45</div><div class="w">Quartiere ebraico: Grande Sinagoga (a scelta, fino alle 20), Kazinczy utca, Szimpla Kert</div><div class="n">M2 Kossuth tér → Deák, 1 fermata. Poi 15 min a piedi fino al molo</div><span class="tag">LIBERO</span></div>
+    <div class="slot ok"><div class="t">19:20 → 20:20</div><div class="w">Crociera Danube Legend, 1 h con drink e audioguida in italiano</div><div class="n">Prenotazione 5166978, voucher via email. Imbarco al Dock 7 di Jane Haining rakpart (lungofiume di Pest, zona Vigadó), esserci alle 19:05. Parte anche con la pioggia (ponte chiuso e riscaldato)</div><span class="tag">PAGATO 50 €</span></div>
+  </section>
+
+  <section class="day">
+    <h2>Martedì 29</h2>
+    <div class="city bud">Buda e maialini</div>
+    <div class="slot open"><div class="t">09:00</div><div class="w">Buda: Bastione dei Pescatori, Chiesa di Mattia, Castello</div><div class="n">M1 fino a Vörösmarty tér, Ponte delle Catene, bus 16 o funicolare; Chiesa ~12-19 € in cassa</div><span class="tag">LIBERO</span></div>
+    <div class="slot todo"><div class="t">15:40 → 16:10</div><div class="w">MiniPig Cafe, stanza VIP Heaven, mezz'ora coi maialini nani</div><div class="n">Paulay Ede utca 2 (Deák). 18.245 Ft in due, prenotazione online anticipata su minipig.cafe, nessun rimborso; arrivare alle 15:30</div><span class="tag">DA PRENOTARE</span></div>
+    <div class="slot open"><div class="t">15:00 → 19:00</div><div class="w">Pomeriggio libero: Andrássy út, piazza degli Eroi, Castello Vajdahunyad, oppure riposo</div><div class="n">Terme Széchenyi saltate (16/09)</div><span class="tag">LIBERO</span></div>
+    <div class="slot todo"><div class="t">20:15</div><div class="w">Cena peruviana, Inka Grill Bistro, Ráday utca 29</div><div class="n">Telefonare prima: +36 30 962 2312</div><span class="tag">DA PRENOTARE</span></div>
+  </section>
+
+  <section class="day">
+    <h2>Mercoledì 30</h2>
+    <div class="city bud">Budapest → Napoli</div>
+    <div class="slot info"><div class="t">08:30</div><div class="w">Check-out al Collect (entro le 11), bagagli con noi</div><span class="tag">LOGISTICA</span></div>
+    <div class="slot open"><div class="t">09:00</div><div class="w">Mercato Centrale: paprika, salami, lángos</div><div class="n">M1 → Deák, M3 → Kálvin tér, 5 min a piedi</div><span class="tag">LIBERO</span></div>
+    <div class="slot info"><div class="t">10:45 → ~11:25</div><div class="w">Bus 100E da Kálvin tér all'aeroporto</div><div class="n">2.500 Ft a testa con carta a bordo; la travelcard non vale</div><span class="tag">SUL POSTO</span></div>
+    <div class="slot ok"><div class="t">13:30 → 15:10</div><div class="w">Volo BUD → NAP, FR4090</div><span class="tag">PAGATO 90,60 €</span></div>
+  </section>
+
+</div>
+
+<p class="foot">Promemoria sotto data: check-in Ryanair online 24 ore prima di ciascuna delle tre tratte (saltarlo costa 55 € a testa) · documenti di Michelle: passaporto e permesso di soggiorno in originale · Viaggiare Sicuri il 21/9 · risposta del Collect sul taxi nella chat Booking. Dettagli e fonti in <code>itinerario.md</code>, <code>tracker-budget.md</code>, <code>STATO.md</code>.</p>
+</body>
+</html>
