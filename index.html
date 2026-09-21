@@ -269,7 +269,8 @@ PAGES.forEach(p=>{
   pg.appendChild(a);
 });
 const viewer=document.getElementById("viewer"),frame=document.getElementById("vframe");
-function openPage(p){document.getElementById("vtitle").textContent=p.t;document.getElementById("vopen").href=p.f;frame.src=p.f;viewer.classList.add("on");history.pushState({p:1},"","#"+p.f)}
+const V="?v="+Math.floor(Date.now()/600000);
+function openPage(p){document.getElementById("vtitle").textContent=p.t;document.getElementById("vopen").href=p.f+V;frame.src=p.f+V;viewer.classList.add("on");history.pushState({p:1},"","#"+p.f)}
 function closePage(){viewer.classList.remove("on");frame.src="about:blank"}
 document.getElementById("vback").addEventListener("click",()=>{closePage();if(history.state&&history.state.p)history.back()});
 window.addEventListener("popstate",()=>{if(viewer.classList.contains("on"))closePage()});
